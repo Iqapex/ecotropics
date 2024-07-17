@@ -1,0 +1,29 @@
+.contact-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    
+  }
+  @media screen and (max-width: 565px) {
+    iframe {
+      width: 340px;
+      height: 859px;
+    }
+  }
+  
+  @media screen and (min-width: 566px) and (max-width: 765px) {
+    iframe {
+      width: 540px;
+      height: 859px;
+    }
+  }
+  @media screen and (min-width: 800px) and (max-width: 1000px) {
+    iframe {
+      width: 540px;
+     
+    }
+    .contact-container{
+        margin:0;
+    }
+  }
+  

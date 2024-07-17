@@ -1,0 +1,38 @@
+.achievements-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .achievements-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:2rem;
+    color: white;
+  }
+  
+  .achievement {
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid white;
+    border-radius:6rem;
+    width:200px;
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+   
+   
+  }
+  
+  @media screen and (max-width: 768px) {
+    .achievements-container {
+      flex-direction: column;
+    }
+  
+    .achievement {
+      width: 80%;
+    }
+  }
+  

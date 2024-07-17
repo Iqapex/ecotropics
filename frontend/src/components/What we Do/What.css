@@ -1,0 +1,32 @@
+.Reg-container {
+    display: flex;
+    align-items: center;
+  /* Initially move the container to the left */
+    /* Add transition effect */
+    padding:4rem;
+    
+  }
+  
+  .carbon-image {
+    width: 300px; /* Adjust image size as needed */
+    margin-right: 20px; /* Adjust spacing between image and text */
+    height: 200px;
+  }
+  
+  .Reg-text {
+    flex: 1; /* Take remaining space */
+    padding:2rem;
+    color:black
+  }
+  
+  
+  @media screen and (max-width: 685px) {
+    .Reg-container {
+      flex-direction: column; /* Change flex direction to column */
+    }
+  }
+  @media screen and (max-width: 401px) {
+    .Reg-container {
+      padding: 0; /* Change flex direction to column */
+    }
+  }
