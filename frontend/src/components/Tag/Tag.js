@@ -39,7 +39,7 @@ function Tag() {
       <div className="carbon-text">
         <h1>Harness the power of data</h1>
         <p>
-          Manage farm-level decisions and finances and capture your supply chains to be part of the journey to a hunger-free and carbon-neutral world.
+        - Building Up Agricultural Entrepreneurs for a Sustainable Future
         </p>
       </div>
     </div>

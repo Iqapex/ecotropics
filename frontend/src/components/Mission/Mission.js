@@ -32,16 +32,16 @@ const Mission = () => {
       <h1>Our Missions</h1>
       <div className="mission-container">
         <div className={`mission-card ${isVisible ? 'visible' : ''}`}>
-          <h2>Core Value 1</h2>
-          <p>Our first core value description goes here.</p>
+          <h2>Innovation in Agriculture</h2>
+          <p>At Food Finance, we foster innovation in agriculture. We empower entrepreneurs with knowledge and resources to drive advancements.</p>
         </div>
         <div className={`mission-card ${isVisible ? 'visible1' : ''}`}>
-          <h2>Core Value 2</h2>
-          <p>Our second core value description goes here.</p>
+          <h2>Sustainability</h2>
+          <p> We promote sustainable agricultural practices to ensure global food security. Our focus is on initiatives with lasting positive impacts.</p>
         </div>
         <div className={`mission-card ${isVisible ? 'visible2' : ''}`}>
-          <h2>Core Value 3</h2>
-          <p>Our third core value description goes here.</p>
+          <h2>Empowerment </h2>
+          <p>We provide financial support to create a community of agricultural leaders. Our mission is to empower individuals to drive positive change.</p>
         </div>
         {/* Add more mission cards as needed */}
       </div>

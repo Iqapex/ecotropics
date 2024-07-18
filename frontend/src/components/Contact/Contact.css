@@ -4,6 +4,15 @@
     padding: 20px;
     
   }
+  
+  
+  .contact-description {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #333333;
+    line-height: 1.6;
+  }
+  
   @media screen and (max-width: 565px) {
     iframe {
       width: 340px;

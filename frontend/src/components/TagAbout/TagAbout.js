@@ -39,7 +39,10 @@ function TagAbout() {
       <div className="carbon-text">
         <h1>ABOUT US</h1>
         <p>
-          Manage farm-level decisions and finances and capture your supply chains to be part of the journey to a hunger-free and carbon-neutral world.
+        Food Finance is dedicated to building and supporting agricultural entrepreneurs. We believe that
+the future of sustainable agriculture lies in the hands of innovative minds willing to transform
+their ideas into reality. Our mission is to provide the tools, resources, and support necessary for
+aspiring and established agricultural entrepreneurs to thrive in today's competitive market.
         </p>
       </div>
     </div>
