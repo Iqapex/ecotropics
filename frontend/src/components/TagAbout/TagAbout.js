@@ -39,10 +39,7 @@ function TagAbout() {
       <div className="carbon-text">
         <h1>ABOUT US</h1>
         <p>
-        Food Finance is dedicated to building and supporting agricultural entrepreneurs. We believe that
-the future of sustainable agriculture lies in the hands of innovative minds willing to transform
-their ideas into reality. Our mission is to provide the tools, resources, and support necessary for
-aspiring and established agricultural entrepreneurs to thrive in today's competitive market.
+        ZAMSOF is a network of CSOs, movements, and community groups focused on promoting social, ecological, and economic justice. It strengthens democracy, mobilizes action on key issues, and challenges neoliberal policies, advocating for sustainable development and people-centered alternatives to profit-driven systems.
         </p>
       </div>
     </div>

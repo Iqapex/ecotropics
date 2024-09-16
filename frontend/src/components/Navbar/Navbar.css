@@ -21,10 +21,14 @@
 
 .logo{
   padding-left:2rem;
+  padding-top: 2rem;
 }
 
 .logo img {
-  height: 120px;
+  height: 80px;
+
+  border-radius: 5%;
+  
 }
 
 .hamburger {

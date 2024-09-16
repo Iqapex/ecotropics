@@ -37,10 +37,8 @@ function Tag() {
   return (
     <div id="carbon-container" className="carbon-container">
       <div className="carbon-text">
-        <h1>Harness the power of data</h1>
-        <p>
-        - Building Up Agricultural Entrepreneurs for a Sustainable Future
-        </p>
+        <h1> Empowering Communities, Transforming Lives</h1>
+        
       </div>
     </div>
   );

@@ -7,13 +7,16 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-        <div className="row">
-            <div style={{display:"flex",justifyContent:"space-between"}}>
-          <div className="col-md-6">
+        <div className="row1">
+          <div className="about">
             <h4>About Us</h4>
-            <p>A brief description of your company and its mission.</p>
+            <p> 
+            <p>ZAMSOF is a network of Civil Society Organizations, Movements, and Community groups</p>
+            <p>part of the World Social Forum, participating in the Southern Africa</p>
+            <p>and African Social Forums, and the World Social Forum.</p>
+              </p>
           </div>
-          <div className="col-md-6 " style={{marginRight:"7rem"}}>
+          <div className="links">
             <h4>Quick Links</h4>
             <ul>
               <li><a href="/">Home</a></li>
@@ -22,12 +25,15 @@ function Footer() {
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
-          </div>
-          <div className="col-md-3">
-            <h4>Contact Us</h4>
-            <p>123 Main Street, City</p>
-            <p>Email: example@example.com</p>
-            <p>Phone: +123 456 7890</p>
+          
+          <div className="contact">
+          <h2>Contact Us</h2>
+        <p><strong>ZAMSOF Secretariat:</strong></p>
+        <p>Zambia Library Skills Centre and Visually Impaired (ZLSCVI)</p>
+        <p><strong>National Coordinator For National Organizing Steering Committee:</strong></p>
+        <p>Plot No. 4225, Chilimbulu Road, Chilenje South, Lusaka, Zambia</p>
+        <p>Email: example@example.com</p>
+        <p>Phone: +123 456 7890</p>
           </div>
         </div>
         <div className="row">

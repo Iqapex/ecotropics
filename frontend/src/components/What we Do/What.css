@@ -3,12 +3,14 @@
   align-items: center;
   padding: 4rem;
   transition: all 0.3s ease;
+  background:linear-gradient(green,#ffffff);
 }
 
 .carbon-image {
   width: 300px; /* Adjust image size as needed */
   margin-right: 20px; /* Adjust spacing between image and text */
   height: 200px;
+  border-radius: 5px;
 }
 
 .Reg-text {
@@ -16,30 +18,31 @@
   padding: 2rem;
   color: black;
 }
+.Reg-text h2{
+  /* flex: 1; */
+  padding: 2rem;
+  color: #c50c0cf0;
+}
+
 
 .Reg-offers {
-  margin-top: 20px;
+  margin-top: 3rem;
 }
 
 .Reg-offers h2 {
-  color: black;
+  color: #c50c0cf0;
   text-align: center;
   font-size: 1.5rem;
 }
 
-.Reg-offers ul {
-  list-style-type: none;
-  padding: 0;
-}
 
-.Reg-offers li {
-  margin-bottom: 20px;
-}
+
 
 .Reg-offers h3 {
   color: #619900;
   font-size: 1.2rem;
   margin-bottom: 10px;
+  padding: 2rem;
 }
 
 .Reg-offers p {

@@ -4,11 +4,13 @@
     background-color: #333;
     color: #fff;
     padding: 40px 0;
+    
   }
   
   .container {
     width: 90%;
     margin: 0 auto;
+    
   }
   
   h4 {
@@ -46,5 +48,14 @@
   .copyright {
     text-align: center;
     margin-top: 20px;
+  }
+
+  .row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .about{
+    padding-right: 3rem;
   }
   

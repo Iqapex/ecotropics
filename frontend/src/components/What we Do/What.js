@@ -1,5 +1,5 @@
 import React from 'react';
-import carbonImage from '../../assets/carbonSeq.jpeg';
+import carbonImage from '../../assets/Sun Gold Orange Sustainability Instagram Post.png';
 import './What.css';
 
 function What() {
@@ -10,41 +10,23 @@ function What() {
     <>
     <div className="Reg-container" >
       <div className="Reg-text">
-        <h2>What We Do</h2>
-        <p>
-       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi dolorem recusandae reiciendis eveniet reprehenderit expedita quas et quisquam ad quidem fugit necessitatibus ullam, cupiditate saepe ab optio est illum sunt Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error numquam dignissimos quia nisi! Eaque et deserunt reprehenderit ipsam! Ad quos aspernatur accusantium. Error magni aperiam esse cum, nulla quas, nesciunt id, ipsum porro aut dignissimos maiores in est vel tempore voluptatibus quidem recusandae repellendus. Ducimus nisi alias odio. Eos non, ipsum perspiciatis obcaecati assumenda dolorum labore, quisquam, quo tenetur eligendi rerum. Id sint, dolore veniam inventore corporis, excepturi totam esse pariatur quaerat ut praesentium eligendi beatae ullam minus animi distinctio accusamus ipsam doloribus. Quae quia explicabo dolorum autem incidunt magnam, laboriosam id assumenda ducimus a, ex, accusantium perspiciatis cupiditate eum.
-        </p>
+        <h2>Our Mission</h2>
+      <h3>Our mission at Zambia Social Forum (ZAMSOF) is to unite citizens, community groups, and CSO movements in Zambia to amplify their voices in policy-making, demand better living standards, and advocate for improved service delivery. We are committed to fostering a just and inclusive society where every individual can maximize their potential, contributing holistically towards sustainable development and harmonious relationships between humankind and the Earth.</h3>
       </div>
       <img src={carbonImage} alt="Carbon" className="carbon-image" />
     </div>
     <div className="Reg-offers">
-    <h2>What We Offer</h2>
-    <ul>
-      <li>
-        <h3>Partial Financial Aid</h3>
-        <p>
-          We provide a partial range of financial solutions tailored to the needs of agricultural entrepreneurs, from seed funding for startups to growth capital for expanding enterprises. Our aid involves investment opportunities designed to help you scale your business and achieve your goals.
-        </p>
-      </li>
-      <li>
-        <h3>Educational Resources</h3>
-        <p>
-          Knowledge is power. We offer extensive educational resources, including online courses, webinars, workshops, and mentorship programs, to help you stay ahead of industry trends and best practices. Our educational initiatives cover a wide range of topics, from sustainable farming techniques to advanced business management skills.
-        </p>
-      </li>
-      <li>
-        <h3>Networking Opportunities</h3>
-        <p>
-          Join a community of like-minded agricultural entrepreneurs and industry experts. Our networking events, conferences, and online forums provide the perfect platform to share ideas, collaborate on projects, and build lasting partnerships. Connect with potential investors, mentors, and peers who can help you take your business to the next level.
-        </p>
-      </li>
-      <li>
-        <h3>Business Development Services</h3>
-        <p>
-          Our comprehensive business development services are designed to support you at every stage of your entrepreneurial journey. From business plan development and market analysis to branding and marketing strategies, our team of experts is here to guide you through the complexities of building a successful agricultural enterprise.
-        </p>
-      </li>
-    </ul>
+    <h2> Our Programs</h2>
+    <h3>
+    ZAMSOF constitution provides for a semi-organic structure voluntarily: A Guardian that is selected
+ by the members as a pro bono advisor based on the person’s knowledge of the principles and
+ discourse of the World Social Forum; An elected Chairperson and Treasurer from amongst the
+ membership based on their consistent activism; A Coordinator selected from the membership based
+ on her/his activism, who is mandated to co-opt volunteers to assist with administrative work of the
+ forum; There is no monetary membership fee to enable all interested activists to join from various
+ walks of life. The Organizational membership from established CSOs and other organizations may
+ apply to support day-to-day Secretariat works.
+    </h3>
   </div>
   
   </>

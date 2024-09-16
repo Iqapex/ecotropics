@@ -5,7 +5,8 @@
     transform: translateX(-50px); /* Initially move the container to the left */
     transition: opacity 0.8s ease, transform 0.8s ease; /* Add transition effect */
     padding:4rem;
-    background-color: black;
+    background-color: green;
+    height: 3rem;
   }
   
   .carbon-image {
@@ -16,7 +17,7 @@
   .carbon-text {
     flex: 1; /* Take remaining space */
     padding:2rem;
-    color:white;
+    color:rgb(240, 98, 22);
   }
   
   .slide-in {
