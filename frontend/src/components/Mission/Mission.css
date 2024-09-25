@@ -17,19 +17,20 @@
     padding: 10px;
     background-color: transparent;
     border: 2px solid #619900;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width:20rem;
     height:10rem;
     
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: scale(1);
-    transition: opacity 0.7s ease;
+    transition: opacity 0.3s ease;
     &:hover{
       cursor: pointer;
       transform: scale(1.1);
-      background-color: #619900;
+      background-color: #fa5144;
       color: white;
+      
     }
   }
   

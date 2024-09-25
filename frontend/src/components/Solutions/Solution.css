@@ -8,6 +8,9 @@
     padding-right: 6rem;
     gap:4rem;
   }
+  h1{
+    color: #fa5144;
+  }
   .icon{
     color:black;
     font-size: 2rem;
@@ -28,7 +31,7 @@
     &:hover{
         cursor: pointer;
         color: white;
-        background-color: #619900;
+        background-color: #fa5144;
         .icon{
             color:white;
         }

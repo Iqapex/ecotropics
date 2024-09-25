@@ -29,8 +29,8 @@ function Footer() {
           <div className="contact">
           <h2>Contact Us</h2>
         <p><strong>ZAMSOF Secretariat:</strong></p>
-        <p>Zambia Library Skills Centre and Visually Impaired (ZLSCVI)</p>
-        <p><strong>National Coordinator For National Organizing Steering Committee:</strong></p>
+        {/* <p>Zambia Library Skills Centre and Visually Impaired (ZLSCVI)</p> */}
+        {/* <p><strong>National Coordinator For National Organizing Steering Committee:</strong></p> */}
         <p>Plot No. 4225, Chilimbulu Road, Chilenje South, Lusaka, Zambia</p>
         <p>Email: example@example.com</p>
         <p>Phone: +123 456 7890</p>

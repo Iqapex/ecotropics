@@ -49,6 +49,7 @@ function Navbar() {
         <li><NavLink to="/about" activeClassName="active" onClick={toggleMenu}>About Us</NavLink></li>
         <li><NavLink to="/news" activeClassName="active" onClick={toggleMenu}>News</NavLink></li>
         <li><NavLink to="/contact" activeClassName="active" onClick={toggleMenu}>Contact</NavLink></li>
+        <li><NavLink to="/thematic" activeClassName="active" onClick={toggleMenu}>Thematic</NavLink></li>
       </ul>
       {/* Overlay */}
       {menuOpen && <div className="overlay" onClick={toggleMenu}></div>}
