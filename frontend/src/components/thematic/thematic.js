@@ -1,7 +1,7 @@
 // News.js
 
 import React from 'react';
-import './thematic.css'; // Import the CSS file for styling
+import './Thematic.css'; // Import the CSS file for styling
 
 function News() {
   return (
