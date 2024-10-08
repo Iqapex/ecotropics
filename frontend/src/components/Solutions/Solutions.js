@@ -13,29 +13,37 @@ function Solutions() {
         <div className="cardSol">
           {/* <FontAwesomeIcon className='icon' icon={faFlask} /> */}
            {/* Use the imported icon */}
-          <h2>Human Rights</h2>
-          <p>Human rights ensure the dignity, freedom, and equality of all individuals, promoting justice, fairness, and protection from discrimination.</p>
+          <h2>Climate Justice</h2>
+          <p>Establish and support climate action groups with
+diverse representation, including women and youth. Facilitate advocacy training to address both
+climate and gender justice issues.</p>
         </div>
         <div className="cardSol">
         {/* <FontAwesomeIcon className='icon' icon={faIdCard} /> */}
-          <h2>Food sovereignty</h2>
-          <p>Food sovereignty empowers communities to control their own food systems, prioritizing local production, sustainable practices, and equitable access to nutritious food.</p>
+          <h2>Food Security</h2>
+          <p>Improve food security and livelihoods through agroecological practices, emphasizing gender
+          equity, social inclusion, and human rights.</p>
         </div>
         <div className="cardSol">
-          <h2>Children and education</h2>
-          <p>Children and education focus on providing equal learning opportunities, nurturing development, and empowering young minds for a brighter, inclusive future</p>
+          <h2>Global Solidarity</h2>
+          <p>Build regional and global solidarity for social and economic justice, with a focus on gender
+          equality, human rights, and humanitarian services.</p>
         </div>
         <div className="cardSol">
-          <h2>Agroecology Climate Justice</h2>
-          <p>Agroecology Climate Justice advocates for sustainable farming practices that respect ecosystems, reduce emissions, and ensure fair access to resources, benefiting marginalized communities</p>
+          <h2>Community Engagement</h2>
+          <p>Promote community participation, protect civic spaces, and advance democratic governance, with
+          an emphasis on gender equality, social inclusion, and human rights.</p>
         </div>
         <div className="cardSol">
-          <h2>Social inclusion</h2>
-          <p>Social inclusion promotes equal participation and representation of all individuals, ensuring that marginalized groups are empowered and integrated into society</p>
+          <h2>Movement Building</h2>
+          <p>Build and strengthen movements addressing climate change, food sovereignty, gender equality,
+          and other cross-cutting issues, emphasizing social inclusion and human rights.</p>
         </div>
         <div className="cardSol">
-          <h2>Gender sensitization</h2>
-          <p>Gender and development focuses on addressing inequalities, empowering women and marginalized genders, and promoting equitable access to resources and opportunities for all.</p>
+          <h2>Social Inclusion</h2>
+          <p>Enhance organizational growth, financial sustainability, and visibility, ensuring effective
+implementation of ZAMSOF&#39;s mission and strategic objectives, with an emphasis on gender equity and
+social inclusion.</p>
         </div>
       </div>
     </div>
