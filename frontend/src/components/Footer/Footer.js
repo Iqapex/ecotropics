@@ -32,7 +32,7 @@ function Footer() {
         {/* <p>Zambia Library Skills Centre and Visually Impaired (ZLSCVI)</p> */}
         {/* <p><strong>National Coordinator For National Organizing Steering Committee:</strong></p> */}
         <p>Plot No. 4225, Chilimbulu Road, Chilenje South, Lusaka, Zambia</p>
-        <p>Email: example@example.com</p>
+        <p>Email: zamsof@zambia.co.zm / zamsof.forum@gmail.com</p>
         <p>Phone: +123 456 7890</p>
           </div>
         </div>
