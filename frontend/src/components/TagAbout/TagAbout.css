@@ -28,3 +28,7 @@
       flex-direction: column; /* Change flex direction to column */
     }
   }
+
+  .carbon-text h1 {
+    font-family: 'Dancing Script', cursive;
+  }
