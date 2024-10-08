@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import './TagAbout.css';
 
+
 function TagAbout() {
   // Function to handle animation on scroll
   const handleScrollAnimation = () => {
@@ -37,10 +38,9 @@ function TagAbout() {
   return (
     <div id="carbon-container" className="carbon-container">
       <div className="carbon-text">
-        <h1>ABOUT US</h1>
-        <p>
-        ZAMSOF is a network of CSOs, movements, and community groups focused on promoting social, ecological, and economic justice. It strengthens democracy, mobilizes action on key issues, and challenges neoliberal policies, advocating for sustainable development and people-centered alternatives to profit-driven systems.
-        </p>
+        <h1>A Society without injustices and Poverty in which Humankind enjoys its
+        rights to life between it and the earth.</h1>
+        
       </div>
     </div>
   );
