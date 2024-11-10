@@ -1,18 +1,16 @@
-import React from 'react'
-import './HeroAbout.css'
-function HeroAbout({img,text}) {
+import React from "react";
+import "./HeroAbout.css";
+function HeroAbout({ img, text }) {
   return (
     <div className="hero-container">
-    <div className="background-image1">
+      <div className="background-image1">
         <img src={img} alt="" srcset="" />
-    <div className="hero-text">
-      <h1>{text}</h1>
-      
-      
+        <div className="hero-text">
+          <h1>{text}</h1>
+        </div>
+      </div>
     </div>
-    </div>
-  </div>
-  )
+  );
 }
 
-export default HeroAbout
+export default HeroAbout;

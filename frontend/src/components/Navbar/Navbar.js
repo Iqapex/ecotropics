@@ -14,7 +14,6 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      // Change background color when scrolled beyond 50 pixels
       if (scrollPosition > 570) {
         setNavbarDark(true);
       } else {
@@ -30,30 +29,55 @@ function Navbar() {
   }, []);
 
   return (
-    <div className={`nav-container ${navbarDark ? 'dark' : ''}`}>
+    <header className={`nav-container ${navbarDark ? 'dark' : ''}`}>
       {/* Logo */}
       <div className="logo">
-      <NavLink to="/" >
-        <img src={logo} alt="Logo" />
-      </NavLink>
+        <NavLink to="/">
+          <img src={logo} alt="Logo" />
+        </NavLink>
       </div>
+
       {/* Hamburger Menu Icon */}
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`line ${menuOpen ? 'open' : ''}`}></div>
         <div className={`line ${menuOpen ? 'open' : ''}`}></div>
         <div className={`line ${menuOpen ? 'open' : ''}`}></div>
       </div>
+
       {/* Navigation Links */}
-      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <li><NavLink to="/" exact activeClassName="active" onClick={toggleMenu}>Home</NavLink></li>
-        <li><NavLink to="/about" activeClassName="active" onClick={toggleMenu}>About Us</NavLink></li>
-        <li><NavLink to="/news" activeClassName="active" onClick={toggleMenu}>News</NavLink></li>
-        <li><NavLink to="/contact" activeClassName="active" onClick={toggleMenu}>Contact</NavLink></li>
-        <li><NavLink to="/thematic" activeClassName="active" onClick={toggleMenu}>Thematic</NavLink></li>
-      </ul>
+      <nav>
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li>
+            <NavLink to="/" exact activeClassName="active" onClick={toggleMenu}>
+              Home <span className="uleffect"></span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName="active" onClick={toggleMenu}>
+              About Us <span className="uleffect"></span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/news" activeClassName="active" onClick={toggleMenu}>
+              News <span className="uleffect"></span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" activeClassName="active" onClick={toggleMenu}>
+              Contact <span className="uleffect"></span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/thematic" activeClassName="active" onClick={toggleMenu}>
+              Thematic <span className="uleffect"></span>
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+
       {/* Overlay */}
       {menuOpen && <div className="overlay" onClick={toggleMenu}></div>}
-    </div>
+    </header>
   );
 }
 

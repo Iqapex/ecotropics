@@ -1,39 +1,86 @@
 .achievements-section {
-    padding: 50px 0;
-    text-align: center;
-  }
-  
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #4CAF50, #1E5631); /* Smooth gradient background */
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem; /* Increased gap for better spacing */
+}
+
+.achievement {
+  background: #1C1C1C; /* Darker background for cards */
+  border-radius: 20px; /* Smoother border-radius */
+  width: 240px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement h3 {
+  font-size: 48px; /* Larger numbers for emphasis */
+  font-weight: bold;
+  background: linear-gradient(45deg, #FF7F50, #FFD700); /* Gradient for numbers */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Gradient text */
+  margin-bottom: 10px;
+}
+
+.achievement p {
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.achievement::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.achievement:hover::before {
+  transform: rotate(0deg); /* Subtle rotating light effect on hover */
+}
+
+.achievement:hover {
+  transform: translateY(-10px) scale(1.05); /* Smooth upward hover effect */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
+}
+
+.achievement:hover h3 {
+  background: linear-gradient(45deg, #FFD700, #FF7F50); /* Reverse gradient on hover */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Media Queries for responsive design */
+@media screen and (max-width: 768px) {
   .achievements-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:2rem;
-    color: white;
+    flex-direction: column;
+    gap: 2rem;
   }
-  
+
   .achievement {
-    margin: 20px;
-    padding: 20px;
-    border: 3px solid white;
-    border-radius:6rem;
-    width:200px;
-    &:hover{
-        transform: scale(1.1);
-        cursor: pointer;
-        transition: .3s;
-    }
-   
-   
+    width: 90%;
   }
-  
-  @media screen and (max-width: 768px) {
-    .achievements-container {
-      flex-direction: column;
-    }
-  
-    .achievement {
-      width: 80%;
-    }
-  }
-  
+}

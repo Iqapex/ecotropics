@@ -2,7 +2,6 @@
 
 .team-container {
     display: flex;
-   
     align-items: center;
     padding: 50px;
     justify-content: space-between;
@@ -49,13 +48,12 @@
   .partners {
     margin: 10px;
     padding: 10px;
-   /* border: 1px solid #ccc;*/
     border-radius: 5px;
     text-align: center;
     width: 200px;
     height: 200px;
     &:hover{
-        background-color: #d8e5f1bd;
+        background-color: #54585b84;
         cursor: pointer;
         
     }
@@ -66,6 +64,10 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
+  }
+
+  .partners p{
+    color: #323030;
   }
   
   @media (max-width: 768px) {

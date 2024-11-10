@@ -4,6 +4,7 @@ import About from './Pages/About';
 import Newss from './Pages/News';
 import Contact from './components/Contact/Contact';
 import Home from './components/Home/Home';
+import Thematic from './Pages/Thematic';
 
 function App() {
   return (
@@ -14,8 +15,8 @@ function App() {
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/news" element={<Newss/>}/>
-            {/* <Route path="/thematic" element={<Thematic/>}/> */}
-         </Routes>
+            <Route path="/thematic" element={<Thematic/>}/>
+          </Routes>
       </BrowserRouter>
     </div>
   );

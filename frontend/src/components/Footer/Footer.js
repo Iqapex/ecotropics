@@ -1,61 +1,74 @@
-// Footer.js
+import React from "react";
+import "./Footer.css";
 
-import React from 'react';
-import './Footer.css'; // Import the CSS file for styling
+const Footer = () => {
+  const quickLinks = ["Home", "Thematic", "News", "About Us"];
+  const featureLinks = ["Projects", "Events", "Get Involved", "Donate"];
 
-function Footer() {
   return (
     <footer className="footer">
-      <div className="container">
-        <div className="row1">
-          <div className="about">
-            <h4>About Us</h4>
-            <p> 
-            <p>ZAMSOF is a network of Civil Society Organizations, Movements, and Community groups</p>
-            <p>part of the World Social Forum, participating in the Southern Africa</p>
-            <p>and African Social Forums, and the World Social Forum.</p>
-              </p>
-          </div>
-          <div className="links">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/news">News</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div className="contact">
-          <h2>Contact Us</h2>
-        <p><strong>ZAMSOF Secretariat:</strong></p>
-        {/* <p>Zambia Library Skills Centre and Visually Impaired (ZLSCVI)</p> */}
-        {/* <p><strong>National Coordinator For National Organizing Steering Committee:</strong></p> */}
-        <p>Plot No. 4225, Chilimbulu Road, Chilenje South, Lusaka, Zambia</p>
-        <p>Email: zamsof@zambia.co.zm / zamsof.forum@gmail.com</p>
-        <p>Phone: +123 456 7890</p>
-          </div>
+      <div className="footer-container">
+        <div className="column about-us">
+          <h3>About Us</h3>
+          <p>
+            ZAMSOF is a network of Civil Society Organizations, Movements, and
+            Community groups part of the World Social Forum, participating in
+            the Southern Africa and African Social Forums, and the World Social
+            Forum.
+          </p>
         </div>
-        <div className="row">
-          <div className="col-md-12">
-            <div className="social-links">
-              <a href="#"><i className="fab fa-facebook-f"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
-              <a href="#"><i className="fab fa-linkedin"></i></a>
-            </div>
-          </div>
+
+        <div className="column quick-links">
+          <h3>Quick Links</h3>
+          <ul>
+            {quickLinks.map((link, index) => (
+              <li key={index}>
+                <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div className="row">
-          <div className="col-md-12">
-            <p className="copyright">
-              &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
-            </p>
-          </div>
+
+        <div className="column feature-links">
+          <h3>Feature Links</h3>
+          <ul>
+            {featureLinks.map((link, index) => (
+              <li key={index}>
+                <a href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}>{link}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="column contact-us">
+          <h3>Contact Us</h3>
+          <p>ZAMSOF Secretariat:</p>
+          <p>Plot No. 4225, Chilimbulu Road, Chilenje South, Lusaka, Zambia</p>
+          <p>
+            Email:{" "}
+            <a href="mailto:zamsof@zambia.co.zm">zamsof@zambia.co.zm</a> /{" "}
+            <a href="mailto:zamsof.forum@gmail.com">zamsof.forum@gmail.com</a>
+          </p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>&copy; 2024 ZAMSOF. All Rights Reserved.</p>
+        <div className="social-links">
+          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+            <i className="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+            <i className="fab fa-instagram"></i>
+          </a>
         </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;

@@ -1,39 +1,39 @@
 import React from 'react';
 import './Process.css';
 
+const steps = [
+  {
+    title: 'Donate',
+    description: 'Your donation helps fund programs, reaching communities in need.',
+  },
+  {
+    title: 'Volunteer',
+    description: 'Volunteer opportunities: teach, provide healthcare, or protect the environment.',
+  },
+  {
+    title: 'Partner with Us',
+    description: 'We partner with businesses, NGOs, and governments to expand impact.',
+  },
+];
+
 const Process = () => {
   return (
-    <div style={{backgroundColor:"#f8f9fa"}}>
-    <h1 style={{marginBottom:"3rem",paddingTop:"2rem"}}>Get Involved</h1>
-    <div className="process-container">
-     
-      <div className="cardP">
-        <h2>Donate</h2>
-        <p>Your donation helps fund programs, reaching communities in need.</p>
+    <div className="process-section">
+      <h1 className="process-heading">Get Involved</h1>
+      <div className="process-container">
+        {steps.map((step, index) => (
+          <React.Fragment key={index}>
+            <div className="cardP">
+              <h2>{step.title}</h2>
+              <p>{step.description}</p>
+            </div>
+            {index < steps.length - 1 && <div className="arrow"></div>} 
+            {/* Arrow except after last card */}
+          </React.Fragment>
+        ))}
       </div>
-      <div className="arrow"></div>
-      <div className="cardP">
-        <h2>Volunteer</h2>
-        <p>Volunteer opportunities: teach, provide healthcare, or protect the environment.</p>
-      </div>
-      <div className="arrow"></div>
-      <div className="cardP">
-        <h2> Partner with Us</h2>
-        <p>We partner with businesses, NGOs, governments to expand impact.</p>
-      </div>
-      {/* <div className="arrow"></div>
-      <div className="cardP">
-        <h2>Step 4</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-      <div className="arrow"></div>
-      <div className="cardP">
-        <h2>Step 5</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div> */}
-    </div>
     </div>
   );
-}
+};
 
 export default Process;

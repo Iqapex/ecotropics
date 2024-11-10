@@ -38,7 +38,6 @@ function Tag() {
     <div id="carbon-container" className="carbon-container">
       <div className="carbon-text">
         <h1> Empowering Communities, Transforming Lives</h1>
-        
       </div>
     </div>
   );

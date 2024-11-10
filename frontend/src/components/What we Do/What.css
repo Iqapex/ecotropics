@@ -1,91 +1,112 @@
+.whatwedo {
+  background: linear-gradient(135deg, #f0f8ff, #e0f7fa); /* Soft light blue gradient */
+  padding: 3rem 0;
+}
+
 .Reg-container {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 4rem;
-  transition: all 0.3s ease;
-  background:linear-gradient(green,#ffffff);
-}
-
-.carbon-image {
-  width: 300px; /* Adjust image size as needed */
-  margin-right: 20px; /* Adjust spacing between image and text */
-  height: 200px;
-  border-radius: 5px;
+  background: linear-gradient(135deg, #fff5e1, #ffecd2); /* Soft peach gradient */
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
 }
 
 .Reg-text {
-  flex: 1; /* Take remaining space */
+  flex: 1;
   padding: 2rem;
-  color: black;
-}
-.Reg-text h2{
-  /* flex: 1; */
-  padding: 2rem;
-  color: #c50c0cf0;
+  color: #2f4f4f;
+  text-align: center; /* Center the text */
 }
 
+.Reg-text h2 {
+  color: #c50c0cf0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.Reg-text h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.cards-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
+  justify-content: center; /* Center the cards */
+  margin-top: 2rem;
+}
+
+.card {
+  background: linear-gradient(135deg, lightgray, lightgreen);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 270px; /* Set a fixed width for consistency */
+  text-align: center;
+}
+
+.card h2, .card h3 {
+  color: #2f4f4f;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #333;
+  font-size: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 .Reg-offers {
-  margin-top: 3rem;
+  background: linear-gradient(135deg, #f9f9f9, #e0f7fa); /* Light cyan to white gradient */
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .Reg-offers h2 {
-  color: #c50c0cf0;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-
-
-
-.Reg-offers h3 {
-  color: #619900;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  padding: 2rem;
-}
-
-.Reg-offers p {
-  color: #333333;
-  font-size: 1rem;
+  color: #2f4f4f;
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
 @media screen and (max-width: 685px) {
   .Reg-container {
-    flex-direction: column; /* Change flex direction to column */
-    padding: 2rem; /* Adjust padding for smaller screens */
-  }
-
-  .carbon-image {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 0; /* Remove right margin */
-    margin-bottom: 20px; /* Add bottom margin */
+    flex-direction: column;
+    padding: 2rem;
   }
 
   .Reg-text {
-    padding: 1rem; /* Adjust padding for smaller screens */
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 1.5rem; /* Space between cards */
   }
 
   .Reg-offers h2 {
-    font-size: 1.2rem; /* Adjust heading size for smaller screens */
-  }
-
-  .Reg-offers h3 {
-    font-size: 1rem; /* Adjust subheading size for smaller screens */
-  }
-
-  .Reg-offers p {
-    font-size: 0.9rem; /* Adjust paragraph size for smaller screens */
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (max-width: 401px) {
   .Reg-container {
-    padding: 0; /* Remove padding for very small screens */
+    padding: 1rem;
   }
 
   .Reg-offers {
-    padding: 1rem; /* Add padding for the offers section on very small screens */
+    padding: 1rem;
   }
 }

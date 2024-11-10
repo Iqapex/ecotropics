@@ -1,19 +1,19 @@
 import React from 'react'
 import img from '../assets/carbon.jpg'
 import Footer from '../components/Footer/Footer'
-import HeroAbout from '../components/HeroAbout/HeroAbout'
 import Navbar from '../components/Navbar/Navbar'
-import News from '../components/News/News'
+import ThematicPage from '../components/Thematic/ThematicPage'
+import HeroAbout from '../components/HeroAbout/HeroAbout'
 
-function Newss() {
+function Thematic() {
   return (
     <div>
       <Navbar/>
-      <HeroAbout text="News And Updates " img={img}/>
-      <News/>
+      <HeroAbout text="Thematic Areas" img={img}/>
+      <ThematicPage />
       <Footer/>
     </div>
   )
 }
 
-export default Newss
+export default Thematic

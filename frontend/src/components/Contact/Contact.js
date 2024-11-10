@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import img from '../../assets/hero2.jpg';
-import Footer from '../Footer/Footer';
-import HeroAbout from '../HeroAbout/HeroAbout';
-import Navbar from '../Navbar/Navbar';
-import './Contact.css';
+import React, { useState } from "react";
+import img from "../../assets/hero2.jpg";
+import Footer from "../Footer/Footer";
+import HeroAbout from "../HeroAbout/HeroAbout";
+import Navbar from "../Navbar/Navbar";
+import './Contact.css'; // Import the separate CSS file
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -14,15 +14,21 @@ function Contact() {
     message: ''
   });
 
+  const [showMessage, setShowMessage] = useState(false); // State to handle submission message
+
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here (e.g., API call)
-    console.log('Form data submitted:', formData);
+    // Add form submission logic here
+    
+    // Display the message and make it disappear after 3 seconds
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
   };
 
   const handleReset = () => {
@@ -38,84 +44,97 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className='flex'>
       <HeroAbout img={img} text="CONTACT US" />
       <div className="contact-container">
-        <p className="contact-description">
-          Have questions or need more information? Get in touch with us! Our team is here to assist you
-          and provide the support you need to succeed. Reach out to us via email, phone, or through our
-          social media channels.
-        </p>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone No:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="address">Address:</label>
-            <input
-              type="text"
-              id="address"
-              name="address"
-              value={formData.address}
-              onChange={handleChange}
-              placeholder="Enter your address"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Enter your message"
-              rows="4"
-              required
-            ></textarea>
-          </div>
-          <div className="form-buttons">
-            <button type="submit" className="btn submit-btn">
-              Submit
-            </button>
-            <button type="button" className="btn reset-btn" onClick={handleReset}>
-              Reset
-            </button>
-          </div>
-        </form>
-      </div>
+        <div className="contact-info">
+          <h2 className="title">About Zamsof</h2>
+          <p>Zamsof is committed to supporting Zambia’s software development community...</p>
+          <p><strong>Address:</strong> Plot No. 4225, Chilimbulu Road...</p>
+          <iframe
+            className="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.2453020182736!2d28.2970051!3d-15.4296642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x194a1c6162f979b5%3A0x4e83f29d6246850!2sChilimbulu%20Road%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2s!4v1601480211499!5m2!1sen!2s"
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+          <p><strong>Email:</strong> zamsof@zambia.co.zm / zamsof.forum@gmail.com</p>
+        </div>
+
+        <div className="contact-form">
+          <h2 className="title">Contact Us</h2>
+          <p>Have questions or need more information? Get in touch with us...</p>
+
+          {showMessage && <div className="success-message">Thank you! Your message has been submitted.</div>} {/* Submission message */}
+          
+          <form onSubmit={handleSubmit}>
+            <div className="form-grid"> {/* Grid layout for form groups */}
+              <div className="form-group">
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="phone">Phone No:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="address">Address:</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  placeholder="Enter your address"
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Enter your message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <div className="button-group">
+              <button type="submit" className="submit-btn">Submit</button>
+              <button type="button" onClick={handleReset} className="reset-btn">Reset</button>
+            </div>
+          </form>
+        </div>
       </div>
       <Footer />
     </>
