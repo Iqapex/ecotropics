@@ -1,0 +1,86 @@
+/* Team.css */
+
+.team-container {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    justify-content: space-between;
+    background-color: #619900;
+    gap:2rem;
+  }
+  
+  .button-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:4rem
+  }
+  
+  button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 4rem;
+    height:4rem;
+    &:hover{
+        background-color: black;
+        cursor:pointer ;
+    }
+  }
+  .visibleT{
+    background-color: black;
+
+  }
+  
+  .management-section,
+  .partners-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 6rem;
+  }
+  
+  .member,
+  .partners {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    &:hover{
+        background-color: #54585b84;
+        cursor: pointer;
+        
+    }
+  }
+  
+  .member img,
+  .partners img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .partners p{
+    color: #323030;
+  }
+  
+  @media (max-width: 768px) {
+    .member,
+    .partners {
+      width: 45%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .member,
+    .partners {
+      width: 100%;
+    }
+  }
+  
