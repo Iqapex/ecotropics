@@ -3,15 +3,15 @@ import img from "../../assets/hero2.jpg";
 import Footer from "../Footer/Footer";
 import HeroAbout from "../HeroAbout/HeroAbout";
 import Navbar from "../Navbar/Navbar";
-import './Contact.css'; // Import the separate CSS file
+import "./Contact.css"; // Import the separate CSS file
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    message: ''
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+    message: "",
   });
 
   const [showMessage, setShowMessage] = useState(false); // State to handle submission message
@@ -23,7 +23,7 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add form submission logic here
-    
+
     // Display the message and make it disappear after 3 seconds
     setShowMessage(true);
     setTimeout(() => {
@@ -33,11 +33,11 @@ function Contact() {
 
   const handleReset = () => {
     setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      address: '',
-      message: ''
+      name: "",
+      phone: "",
+      email: "",
+      address: "",
+      message: "",
     });
   };
 
@@ -48,25 +48,39 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-info">
           <h2 className="title">About Zamsof</h2>
-          <p>Zamsof is committed to supporting Zambia’s software development community...</p>
-          <p><strong>Address:</strong> Plot No. 4225, Chilimbulu Road...</p>
+          <p>
+            Zamsof is committed to supporting Zambia’s software development
+            community...
+          </p>
+          <p>
+            <strong>Address:</strong> Plot No. 4225, Chilimbulu Road...
+          </p>
           <iframe
             className="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.2453020182736!2d28.2970051!3d-15.4296642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x194a1c6162f979b5%3A0x4e83f29d6246850!2sChilimbulu%20Road%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2s!4v1601480211499!5m2!1sen!2s"
             allowFullScreen=""
             loading="lazy"
           ></iframe>
-          <p><strong>Email:</strong> zamsof@zambia.co.zm / zamsof.forum@gmail.com</p>
+          <p>
+            <strong>Email:</strong> zamsof@zambia.co.zm / zamsof.forum@gmail.com
+          </p>
         </div>
 
         <div className="contact-form">
           <h2 className="title">Contact Us</h2>
-          <p>Have questions or need more information? Get in touch with us...</p>
-
-          {showMessage && <div className="success-message">Thank you! Your message has been submitted.</div>} {/* Submission message */}
-          
+          <p>
+            Have questions or need more information? Get in touch with us...
+          </p>
+          {showMessage && (
+            <div className="success-message">
+              Thank you! Your message has been submitted.
+            </div>
+          )}{" "}
+          {/* Submission message */}
           <form onSubmit={handleSubmit}>
-            <div className="form-grid"> {/* Grid layout for form groups */}
+            <div className="form-grid">
+              {" "}
+              {/* Grid layout for form groups */}
               <div className="form-group">
                 <label htmlFor="name">Name:</label>
                 <input
@@ -128,12 +142,15 @@ function Contact() {
                 required
               ></textarea>
             </div>
-
-            <div className="button-group">
-              <button type="submit" className="submit-btn">Submit</button>
-              <button type="button" onClick={handleReset} className="reset-btn">Reset</button>
-            </div>
           </form>
+          <div className="button-group">
+            <button type="submit" className="submit-btn">
+              Submit
+            </button>
+            <button type="button" onClick={handleReset} className="reset-btn">
+              Reset
+            </button>
+          </div>
         </div>
       </div>
       <Footer />

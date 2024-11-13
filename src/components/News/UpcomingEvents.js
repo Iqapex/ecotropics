@@ -1,9 +1,8 @@
 // src/components/UpcomingEvents.js
-
 import React from "react";
 import Fade from "react-reveal/Fade";
-import { Link } from "react-router-dom"; // Optional, if you're using React Router for navigation
-import "./News.css"; // Optional, create a separate CSS file for styling
+import { Link } from "react-router-dom";
+import "./News.css"; // Import the CSS for styling
 
 const newsData = [
   {

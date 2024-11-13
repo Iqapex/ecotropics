@@ -1,13 +1,11 @@
 /* General Styling */
 .thematic-page {
   font-family: 'Arial', sans-serif;
-  padding: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto;
   color: #333;
   background: linear-gradient(to bottom right, #f0fff0, #e6f4ea);
 }
@@ -23,7 +21,7 @@ h2, h3 {
 
 /* Intro Section */
 .intro {
-  padding: 30px;
+  padding: 20px;
   background: rgb(100,102,104);
   background: linear-gradient(135deg, rgba(100,102,104,0.9725140056022409) 15%, rgba(34,34,35,1) 92%);
   display: flex;
@@ -31,6 +29,7 @@ h2, h3 {
   justify-content: center;
   text-align: center;
   width: 80%;
+  margin-top: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
@@ -47,6 +46,7 @@ h2, h3 {
 /* Thematic Areas List */
 .thematic-areas {
   margin-top: 40px;
+  padding: 20px;
 }
 
 .area-cards {
@@ -137,6 +137,7 @@ h2, h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 20px;
   justify-content: center;
 }
 
@@ -161,6 +162,8 @@ h2, h3 {
   background: linear-gradient(135deg, rgba(100,102,104,0.9725140056022409) 15%, rgba(34,34,35,1) 92%);
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(158, 155, 155, 0.3);
+  width: 80%;
+  margin-bottom: 2rem;
 }
 
 .strategy-list {

@@ -1,62 +1,70 @@
-/* Styles for Solutions component */
-
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 6rem;
-    padding-right: 6rem;
-    gap:4rem;
-  }
-  h1{
-    color: #fa5144;
-  }
-  .icon{
-    color:black;
-    font-size: 2rem;
-  }
-  .cardSol {
-    width: 250px;
-    height:300px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: black;
-    &:hover{
-        cursor: pointer;
-        color: white;
-        background-color: #fa5144;
-        .icon{
-            color:white;
-        }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-    }
+h1 {
+  color: #fa5144;
+}
+
+.cardSol {
+  width: 320px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cardSol h2 {
+  color: #333;
+}
+
+.cardSol p {
+  color: #666;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.cardSol:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #fa5144;
+  transform: scale(1.05);
+}
+
+.cardSol:hover h2 {
+  color: white;
+}
+
+.cardSol:hover p {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .cardSol {
+    width: 45%;
   }
-  
-  .card h2 {
-    color: #333;
+}
+
+@media screen and (max-width: 480px) {
+  .cardSol {
+    padding: 15px;
   }
-  
-  .card p {
-    color: #666;
+
+  .cardSol h2 {
+    font-size: 1.2rem;
   }
-  
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
-    .card {
-      width: 45%;
-    }
+
+  .cardSol p {
+    font-size: 0.9rem;
   }
-  
-  @media screen and (max-width: 480px) {
-    .card {
-      width: 100%;
-    }
-  }
-  
+}
