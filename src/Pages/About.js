@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Solutions from '../components/Solutions/Solutions'
 import TagAbout from '../components/TagAbout/TagAbout'
 import Team from '../components/Team/Team'
+import Information from '../components/Information/Information'
 
 function About() {
   return (
@@ -14,6 +15,7 @@ function About() {
       <Navbar />
       <HeroAbout text="Get To Know Us" img={img}/>
       <TagAbout/>
+      <Information />
       <Mission/>
       <Team/>
       <Solutions/>

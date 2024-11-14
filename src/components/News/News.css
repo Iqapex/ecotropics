@@ -109,6 +109,13 @@ h2 {
   opacity: 1;
 }
 
+.countdown-timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .news-container {
