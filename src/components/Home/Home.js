@@ -9,6 +9,7 @@ import Tag from "../Tag/Tag";
 import What from "../What we Do/What";
 import "./Home.css";
 import Team from "../Team/Team";
+import Uniqueness from "./Uniqueness";
 
 function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -26,6 +27,7 @@ function Home() {
       <Navbar />
       <Hero />
       <Tag />
+      <Uniqueness />
       <What />
       <Process />
       <Achievements />

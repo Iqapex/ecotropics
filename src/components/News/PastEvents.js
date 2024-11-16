@@ -11,7 +11,7 @@ const newsData = [
     description:
       "Our Health Drive 2024 successfully provided free medical check-ups, offering consultations and healthcare services. This initiative focused on preventative care and early diagnosis, helping thousands of people receive critical health services.",
     imgSrc:
-      "https://dynamicmedia.accenture.com/is/content/accenture/Accenture-health-index-illustration-hero-image-1?ts=1730986791931&&fmt=webp-alpha&dpr=off",
+      "https://www.shutterstock.com/image-vector/heart-hand-giving-logo-template-260nw-2457545841.jpg",
     link: "/past1",
     type: "past",
   },
@@ -30,12 +30,15 @@ const newsData = [
 function PastEvents() {
   return (
     <div className="pastevent">
-      <h2>Past Events</h2>
+      <Fade bottom>
+        <h2>Past Events</h2>
+      </Fade>
+
       <div className="events-section">
         {newsData
           .filter((item) => item.type === "past")
           .map((event) => (
-            <Fade bottom key={event.id}>
+            <Fade bottom delay={event.id * 200} key={event.id}>
               <div className="news-item">
                 <img
                   src={event.imgSrc}

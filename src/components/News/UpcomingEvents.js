@@ -33,12 +33,14 @@ const newsData = [
 function UpcomingEvents() {
   return (
     <div className="upevent">
+      <Fade bottom>
       <h2>Upcoming Events</h2>
+      </Fade>
       <div className="events-section">
         {newsData
           .filter((item) => item.type === "upcoming")
           .map((event) => (
-            <Fade bottom key={event.id}>
+            <Fade bottom delay={event.id*200} key={event.id}>
               <div className="news-item">
                 <img
                   src={event.imgSrc}
