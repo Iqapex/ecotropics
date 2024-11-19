@@ -64,6 +64,7 @@ function Contact() {
           <p>
             <strong>Email:</strong> zamsof@zambia.co.zm / zamsof.forum@gmail.com
           </p>
+          <p><strong>Mob: </strong>+ 260 950 72 11 22 / +260 978 80 30 32</p>
         </div>
 
         <div className="contact-form">

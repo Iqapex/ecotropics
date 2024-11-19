@@ -1,16 +1,10 @@
-// src/components/Uniqueness.js
+// src/components/Home.js
 import React from "react";
 import Fade from "react-reveal/Fade";
 import "./Home.css";
+import { uniquenessPoints } from "../../Data/Home";
 
-const uniquenessPoints = [
-  "An inclusive movement that engages people from all walks of life.",
-  "Focused on sustainable development and grassroots mobilization.",
-  "Collaborates with a variety of partners, from local to global.",
-  "Innovative solutions tailored to specific community needs.",
-];
-
-function Uniqueness() {
+function Home() {
   return (
     <section className="uniqueness-section">
       <div className="uniqueness-container">
@@ -18,14 +12,14 @@ function Uniqueness() {
         <Fade bottom>
           <h2 className="uniqueness-title">What Makes ZAMSOF Unique?</h2>
         </Fade>
-        
+
         {/* Fade animation for the description */}
         <Fade bottom delay={200}>
           <p className="uniqueness-description">
             ZAMSOF stands out for its commitment to creating sustainable impact. Here's what makes us unique:
           </p>
         </Fade>
-        
+
         {/* Fade animation for each uniqueness point */}
         <div className="uniqueness-grid">
           {uniquenessPoints.map((point, index) => (
@@ -44,4 +38,4 @@ function Uniqueness() {
   );
 }
 
-export default Uniqueness;
+export default Home;
