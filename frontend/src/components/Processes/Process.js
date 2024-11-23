@@ -4,7 +4,7 @@ import './Process.css';
 const steps = [
   {
     title: 'Donate',
-    description: 'Your donation helps fund programs, reaching communities in need.',
+    description: 'Donate to our initiatives and help us reach more communities.',
   },
   {
     title: 'Volunteer',
@@ -20,6 +20,9 @@ const Process = () => {
   return (
     <div className="process-section">
       <h1 className="process-heading">Get Involved</h1>
+      <p className='process-para'>
+        ZAMSOF relies on the collective effort of individuals, communities, and organizations to drive change. Here’s how you can show your solidarity and support the movement:
+      </p>
       <div className="process-container">
         {steps.map((step, index) => (
           <React.Fragment key={index}>

@@ -11,7 +11,7 @@ const Achievements = () => {
     { label: 'Acres of Land', value: 5000 },
     { label: 'Clients', value: 200 },
     {
-        label:'Districts',value:6
+        label:'Districts',value:8
     }
     // Add more achievements as needed
   ];

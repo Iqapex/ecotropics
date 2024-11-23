@@ -58,6 +58,11 @@
   animation: bounceArrow 1.5s infinite ease-in-out;
 }
 
+.process-para{
+  color: #2A2A2A;
+  margin-bottom: 2rem;
+}
+
 /* Bounce effect for arrows */
 @keyframes bounceArrow {
   0%, 100% {

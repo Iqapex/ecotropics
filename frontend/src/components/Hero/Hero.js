@@ -8,10 +8,7 @@ function Hero() {
   <div className="background-image"></div>
   <div className="hero-text">
     <h1>ZAMSOF</h1>
-    <p> Zambia Social Forum (ZAMSOF), formed in 2003, is an open
-      space that provides a free platform for ordinary citizens to discuss
-      democratic issues that affect them and provide alternative community
-      solutions.</p>
+    <p> The Zambia Social Forum (ZAMSOF) promotes dialogue on democracy, social justice, and sustainable development. It empowers marginalized communities through grassroots action, advocacy, and partnerships, addressing issues like climate justice and gender equity. ZAMSOF fosters local solutions and global solidarity, building a more just and inclusive society.</p>
     <NavLink to='/contact'>
     <button>Contact Us</button>
     </NavLink>

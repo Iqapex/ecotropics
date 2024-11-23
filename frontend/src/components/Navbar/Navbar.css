@@ -104,23 +104,21 @@
   transform: scaleX(1);
 }
 
-/* Active link effect for larger screens (underline animation instead of background color) */
 .nav-links li a.active {
-  background-color: transparent; /* Remove background color */
+  background-color: transparent;
 }
 
 .nav-links li a.active .uleffect {
-  transform: scaleX(1); /* Show underline effect */
+  transform: scaleX(1);
 }
 
-/* Navbar open state on small devices */
 .nav-links.open {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 30%; /* Set width to 30% for small devices */
+  width: 40%;
   max-height: 100vh;
-  padding: 20px;
+  margin-bottom: 1rem;
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
   z-index: 1000;

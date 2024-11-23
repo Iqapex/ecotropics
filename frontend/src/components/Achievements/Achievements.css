@@ -1,10 +1,11 @@
 .achievements-section {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #4CAF50, #1E5631); /* Smooth gradient background */
+  padding: 4rem;
+  background: linear-gradient(135deg, #4CAF50, #1E5631);
   color: white;
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin: 0 auto; /* Ensures centering for all screen sizes */
 }
 
 .achievements-container {
@@ -12,15 +13,16 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 3rem; /* Increased gap for better spacing */
+  gap: 3rem;
+  padding: 0 1rem;
 }
 
 .achievement {
-  background: #1C1C1C; /* Darker background for cards */
-  border-radius: 20px; /* Smoother border-radius */
+  background: #1C1C1C;
+  border-radius: 20px;
   width: 240px;
   padding: 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow for depth */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   text-align: center;
   position: relative;
@@ -28,11 +30,11 @@
 }
 
 .achievement h3 {
-  font-size: 48px; /* Larger numbers for emphasis */
+  font-size: 48px;
   font-weight: bold;
-  background: linear-gradient(45deg, #FF7F50, #FFD700); /* Gradient for numbers */
+  background: linear-gradient(45deg, #FF7F50, #FFD700);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Gradient text */
+  -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
 }
 
@@ -59,28 +61,50 @@
 }
 
 .achievement:hover::before {
-  transform: rotate(0deg); /* Subtle rotating light effect on hover */
+  transform: rotate(0deg);
 }
 
 .achievement:hover {
-  transform: translateY(-10px) scale(1.05); /* Smooth upward hover effect */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 .achievement:hover h3 {
-  background: linear-gradient(45deg, #FFD700, #FF7F50); /* Reverse gradient on hover */
+  background: linear-gradient(45deg, #FFD700, #FF7F50);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Media Queries for responsive design */
 @media screen and (max-width: 768px) {
   .achievements-container {
-    flex-direction: column;
-    gap: 2rem;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 0 2rem;
   }
-
   .achievement {
-    width: 90%;
+      width: 100%;
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 20px;
+  }
+  .achievement h3 {
+      font-size: 36px;
+  }
+  .achievement p {
+      font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .achievement h3 {
+      font-size: 32px;
+  }
+  .achievement p {
+      font-size: 16px;
+  }
+  .achievement {
+      padding: 15px;
+      width: 90%;
+      margin: 0 auto;
   }
 }

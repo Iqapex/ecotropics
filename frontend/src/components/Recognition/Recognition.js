@@ -39,7 +39,7 @@ const Recognition = () => {
           slideToClickedSlide={true}
           loop={true}
           loopFillGroupWithBlank= {true}
-
+          //TODO Add Action in Zambia, PCFS, Eco Fish, and other key partners.
           className="swipeflex"
         >
           {[img1, img1, img1, img1, img1, img1, img1].map((image) => createSlide(image))}
