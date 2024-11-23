@@ -49,7 +49,12 @@ function Contact() {
         <div className="contact-info">
           <h2 className="title">About Zamsof</h2>
           <p>
+<<<<<<< HEAD:frontend/src/components/Contact/Contact.js
           ZAMSOF is a movement empowering communities through advocacy, education, sustainability, and global partnerships for change.
+=======
+            Zamsof is committed to supporting Zambia’s software development
+            community...
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/components/Contact/Contact.js
           </p>
           <p>
             <strong>Address:</strong> Plot No. 4225, Chilimbulu Road...

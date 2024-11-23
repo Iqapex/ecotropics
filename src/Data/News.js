@@ -1,5 +1,6 @@
 // src/data.js
 
+<<<<<<< HEAD:frontend/src/Data/News.js
 export const newsData = [
   // {
   //   id: 1,
@@ -23,6 +24,50 @@ export const newsData = [
   //   type: "upcoming",
   //   date: "2024-12-15T00:00:00",
   // },
+=======
+<<<<<<<< HEAD:frontend/src/components/News/News.js
+import React from "react";
+import UpcomingEvents from "./UpcomingEvents"; // Importing the new UpcomingEvents component
+import "./News.css"; // Keep your existing styles
+import PastEvents from "./PastEvents";
+import ForumLanguages from "./ForumLanguages";
+
+function News() {
+  return (
+    <div className="news-container">
+      <UpcomingEvents />
+      <PastEvents />
+      <ForumLanguages />
+    </div>
+  );
+}
+
+export default News;
+========
+export const newsData = [
+  {
+    id: 1,
+    title: "Helping Hands Initiative",
+    description:
+      "Join us in making a difference for underprivileged communities. This initiative provides essential resources like food, education, and shelter to those in need. Volunteers are welcome to contribute in various capacities to help build a better and more sustainable.",
+    imgSrc:
+      "https://www.kiyorndlab.com/wp-content/uploads/2023/07/3-Ways-to-Cultivate-Employee-Engagement-Through-Crowdsourcing.jpg",
+    link: "/upcoming1",
+    type: "upcoming",
+    date: "2024-12-01T00:00:00",
+  },
+  {
+    id: 2,
+    title: "Water for Life Campaign",
+    description:
+      "Our mission to provide clean drinking water to rural areas is ongoing. This campaign focuses on building sustainable water systems to ensure communities have access to safe water, reducing waterborne diseases and improving overall health.",
+    imgSrc:
+      "https://wisconsinmuslimjournal.org/wp-content/uploads/2023/09/adobestock_559725888.jpg",
+    link: "/upcoming2",
+    type: "upcoming",
+    date: "2024-12-15T00:00:00",
+  },
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/News.js
   {
     id: 1,
     title: "Health Drive 2024",
@@ -57,6 +102,7 @@ export const languages = [
       "A widely spoken language in many African countries, including West and Central Africa, ensuring inclusive communication.",
   },
   {
+<<<<<<< HEAD:frontend/src/Data/News.js
     name: "Nyanja",
     description:
       "Widely spoken in Zambia, expressive, melodic, rich cultural heritage."
@@ -67,3 +113,31 @@ export const languages = [
       "Predominant Zambian language, vibrant, tonal, reflects community-focused values.",
   }
 ];
+=======
+    name: "Swahili",
+    description:
+      "Widely spoken in East Africa, including countries like Kenya, Tanzania, and Uganda, facilitating regional participation.",
+  },
+  {
+    name: "Hausa",
+    description:
+      "A major language spoken in West Africa, including Nigeria, Niger, and Ghana, ensuring inclusion from the region.",
+  },
+  {
+    name: "Amharic",
+    description:
+      "The official language of Ethiopia, representing one of the oldest African civilizations.",
+  },
+  {
+    name: "Yoruba",
+    description:
+      "A significant language in West Africa, predominantly spoken in Nigeria, ensuring representation from the area.",
+  },
+  {
+    name: "Zulu",
+    description:
+      "A widely spoken language in Southern Africa, mainly in South Africa, promoting engagement from the region.",
+  },
+];
+>>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/News.js
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/News.js

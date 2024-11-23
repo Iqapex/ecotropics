@@ -25,16 +25,30 @@ const AboutData = {
         "We work alongside communities, organizations, and governments to achieve our shared goals, believing that collective action drives the most impactful change.",
     },
   ],
+<<<<<<< HEAD:frontend/src/Data/About.js
   objectives : [
     {
       title: "Expand Education Programs",
       goal: "Increase access to education by launching new initiatives in rural and underserved communities.",
       milestone: "Enroll 10,000 students in our scholarship and mentorship programs by 2027.",
+=======
+  objectives: [
+    {
+      title: "Expand Education Programs",
+      goal: "Increase access to education by launching new initiatives in rural and underserved communities.",
+      milestone:
+        "Enroll 10,000 students in our scholarship and mentorship programs by 2027.",
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/About.js
     },
     {
       title: "Strengthen Advocacy Networks",
       goal: "Build stronger connections between local organizations and global partners to enhance advocacy efforts.",
+<<<<<<< HEAD:frontend/src/Data/About.js
       milestone: "Establish partnerships with 50 new NGOs and advocacy groups over the next 3 years.",
+=======
+      milestone:
+        "Establish partnerships with 50 new NGOs and advocacy groups over the next 3 years.",
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/About.js
     },
     {
       title: "Increase Environmental Efforts",
@@ -44,6 +58,7 @@ const AboutData = {
     {
       title: "Enhance Healthcare Access",
       goal: "Improve healthcare services in remote areas through mobile health clinics and telemedicine initiatives.",
+<<<<<<< HEAD:frontend/src/Data/About.js
       milestone: "Provide healthcare access to 100,000 individuals in underserved regions by 2027.",
     },
     {
@@ -56,6 +71,11 @@ const AboutData = {
       goal: "Create a global network of empowered communities to drive collective action and shared goals.",
       milestone: "Launch a movement-building platform that connects 100,000 participants across Zambia and beyond by 2027.",
     }
+=======
+      milestone:
+        "Provide healthcare access to 100,000 individuals in underserved regions by 2027.",
+    },
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/About.js
   ],
   missions: [
     {

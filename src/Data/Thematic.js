@@ -8,6 +8,7 @@ export const introContent = {
 
 export const thematicAreas = [
   {
+<<<<<<< HEAD:frontend/src/Data/Thematic.js
     title: "Environmental Justice",
     text: "Advocating for sustainable ecosystems and addressing environmental degradation.",
   },
@@ -30,12 +31,21 @@ export const thematicAreas = [
   {
     title: "Water Issues",
     text: "Advocating for equitable access to clean water and sustainable water management.",
+=======
+    title: "Food Sovereignty",
+    text: "Championing sustainable farming practices and access to nutritious food for all.",
+  },
+  {
+    title: "Agroecology & Climate Justice",
+    text: "Addressing climate change through eco-friendly agriculture and fair resource management.",
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/Thematic.js
   },
   {
     title: "Gender & Development",
     text: "Advocating for gender equity and empowering women in leadership roles.",
   },
   {
+<<<<<<< HEAD:frontend/src/Data/Thematic.js
     title: "Human Rights",
     text: "Protecting fundamental rights and fostering a culture of dignity and respect.",
   },
@@ -46,6 +56,17 @@ export const thematicAreas = [
 ];
 
 
+=======
+    title: "Social Inclusion & Disability",
+    text: "Ensuring all voices are represented and no one is left behind.",
+  },
+  {
+    title: "Human Rights & Education",
+    text: "Protecting basic rights and promoting educational opportunities.",
+  },
+];
+
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/Data/Thematic.js
 export const programHighlights = [
   {
     title: "Food Sovereignty",

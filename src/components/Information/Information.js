@@ -26,7 +26,11 @@ function Information() {
         <div className="accordion">
           {beliefs.map((belief, index) => (
             <Fade bottom delay={index * 200} key={index}>
+<<<<<<< HEAD:frontend/src/components/Information/Information.js
               <div className="accordion-item hover-effect">
+=======
+              <div className="accordion-item">
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/components/Information/Information.js
                 <h3>{belief.title}</h3>
                 <p>{belief.content}</p>
               </div>
@@ -37,7 +41,11 @@ function Information() {
 
       {/* Strategic Objectives */}
       <section className="section bg-gradient-objectives">
+<<<<<<< HEAD:frontend/src/components/Information/Information.js
         <h2 className="section-title">Strategic Objectives (2025-2027)</h2>
+=======
+        <h2 className="section-title">Strategic Objectives (2024-2027)</h2>
+>>>>>>> 5e0499e1357ef9efc1d00715f2486ef060441514:src/components/Information/Information.js
         <div className="objectives">
           {objectives.map((objective, index) => (
             <Fade bottom delay={index * 200} key={index}>
