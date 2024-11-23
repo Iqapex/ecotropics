@@ -1,0 +1,37 @@
+.carbon-container {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  background-color: green;
+  font-size: 1.2rem;
+  height: 200px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.carbon-text {
+  flex: 1;
+  color: rgb(240, 98, 22);
+  word-wrap: break-word;
+  text-align: center;
+}
+
+.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 449px) {
+  .carbon-container {
+      flex-direction: column;
+      padding: 2rem;
+      height: auto;
+      width: 100%;
+  }
+  .carbon-text {
+      padding: 1rem;
+      font-size: 1.2rem;
+  }
+}
