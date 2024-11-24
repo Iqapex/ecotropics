@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const contactRoute = require("./routes/contactRoutes");
+const volunteerRoute = require("./routes/volunteerRoutes");
+const partnerRoute = require("./routes/partnerRoutes");
+const joinUsRoute = require("./routes/joinUsRoutes"); // Import JoinUs route
 
 dotenv.config();
 
@@ -15,6 +18,9 @@ app.use(cors());
 
 // Routes
 app.use("/api/contact", contactRoute);
+app.use("/api/volunteer", volunteerRoute);
+app.use("/api/partner", partnerRoute);
+app.use("/api/joinus", joinUsRoute); // Use JoinUs route
 
 // Root Route
 app.get("/", (req, res) => {
