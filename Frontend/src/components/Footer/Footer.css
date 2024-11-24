@@ -1,0 +1,94 @@
+/* Footer container */
+.footer {
+  background-color: #333;
+  color: #f0f0f0;
+  padding: 40px 20px;
+  text-align: center; /* Ensures all text aligns centrally */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between columns */
+}
+
+/* Column styles */
+.column {
+  flex: 1;
+  min-width: 200px; /* Ensures columns stack properly on smaller screens */
+  max-width: 300px; /* Limits column width for better alignment */
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+p,
+a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* Quick Links and Feature Links */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer bottom styles */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 4rem 0rem 4rem;
+  border-top: 1px solid #555;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* Adds space between social icons */
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #f0f0f0;
+  font-size: 1.5em;
+}
+
+.social-links a:hover {
+  color: #d4af37;
+}
+
+.footer-bottom p {
+  margin: 10px 0;
+  text-align: center; /* Ensures copyright text aligns centrally */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center; /* Ensures proper centering */
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

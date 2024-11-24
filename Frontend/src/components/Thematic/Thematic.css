@@ -1,0 +1,205 @@
+/* General Styling */
+.thematic-page {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  background: linear-gradient(to bottom right, #f0fff0, #e6f4ea);
+}
+
+
+/* Headings */
+h2, h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #9d4f1e;
+}
+
+
+/* Intro Section */
+.intro {
+  padding: 20px;
+  background: linear-gradient(135deg, #aff0dc, #659694);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  transition: color 0.3s ease;
+}
+
+.intro p{
+  color: white;
+  padding: 0 4rem 0 4rem;
+}
+
+/* Thematic Areas List */
+.thematic-areas {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.area-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.area-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  color: #1d1f1d;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer; /* Add cursor pointer for interaction */
+  overflow: hidden; /* Prevent overflow for animations */
+  position: relative;
+}
+
+.area-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);/* Enhanced shadow on hover */
+}
+
+.area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 150, 0, 0.1); /* Light overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.area-card:hover::before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.area-card h4 {
+  color: #007b00;
+  margin: 10px 0;
+}
+
+/* Program Highlights */
+.program-highlights {
+  margin-top: 40px;
+  padding: 20px;
+  width: 100%;
+  background: linear-gradient(135deg, #5e7184f8 15%, rgba(34,34,35,1) 92%);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.highlights-timeline {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem 0 5rem;
+  gap: 20px;
+}
+
+.highlight {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 15px;
+  transition: background-color 0.3s, transform 0.3s; /* Added transition for highlight items */
+}
+
+.highlight:hover {
+  background-color: #f1f8e9; /* Lighten on hover */
+  transform: scale(1.02); /* Slight scale up */
+}
+
+.highlight h4 {
+  color: #007b00;
+}
+
+/* Social Forum Format */
+.social-forum-format {
+  margin-top: 40px;
+}
+
+.forum-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.forum-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for forum items */
+}
+
+.forum-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+/* Mobilization Strategies */
+.mobilization-strategies {
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #43a047, #66bb6a);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(158, 155, 155, 0.3);
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.strategy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.strategy-item {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for strategy items */
+}
+
+.strategy-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Add shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .area-cards, .forum-list, .strategy-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .area-card, .forum-item, .strategy-item {
+    width: 90%; /* Take full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h2 {
+    font-size: 1.8rem; /* Adjust font size for small screens */
+  }
+}

@@ -1,0 +1,118 @@
+/* Base Styles */
+.information-page {
+  font-family: Arial, sans-serif;
+}
+
+.section {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2rem 0;
+  color: #fff;
+}
+
+.vision-box {
+  padding: 0 4rem;
+  gap: 0.2em;
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-vision {
+  background: linear-gradient(to right, #6d7b94, #5f759c);
+}
+
+.bg-gradient-beliefs {
+  background: linear-gradient(to top, #09203f, #537895);
+}
+
+.bg-gradient-objectives {
+  background: linear-gradient(to right, #43cea2, #185a9d);
+}
+
+/* Section Title and Content */
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-content {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Accordion Styles */
+.accordion-header {
+  font-size: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.accordion-content {
+  margin-top: 0.5rem;
+}
+
+/* Objectives and Accordion Layout */
+.objectives,
+.accordion {
+  padding: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.objective-card,
+.accordion-item {
+  background: rgba(255, 255, 255, 0.1);
+  width: 250px;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.objective-card:hover,
+.accordion-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-content {
+    font-size: 0.9rem;
+  }
+
+  .objectives,
+  .accordion {
+    gap: 0.8rem;
+  }
+
+  .objective-card,
+  .accordion-item {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-content {
+    font-size: 0.8rem;
+  }
+}
