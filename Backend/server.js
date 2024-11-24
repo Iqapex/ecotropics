@@ -1,7 +1,8 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors');
+const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const cors = require("cors");
+const contactRoute = require("./routes/contactRoutes");
 
 dotenv.config();
 
@@ -12,25 +13,22 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-// Test Route
-app.get('/', (req, res) => {
-  console.log('GET / route accessed');
-  res.send('Backend is working!');
+// Routes
+app.use("/api/contact", contactRoute);
+
+// Root Route
+app.get("/", (req, res) => {
+    res.send("Backend is working!");
 });
 
-// Debug MONGO_URI
-console.log('MongoDB URI:', process.env.MONGODB_URI);
-
-// Database Connection
+// MongoDB Connection
 mongoose
-  .connect(process.env.MONGODB_URI)
-  .then(() => {
-    console.log('Connected to MongoDB');
-    // Start the server only after connecting to the database
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
+    .connect(process.env.MONGODB_URI)
+    .then(() => {
+        console.log("Connected to MongoDB");
+        app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+    })
+    .catch((error) => {
+        console.error("MongoDB connection error:", error);
+        process.exit(1); // Exit process on error
     });
-  })
-  .catch((error) => {
-    console.error('Database connection error:', error);
-  });

@@ -18,16 +18,38 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add form submission logic here
-
-    // Display the message and make it disappear after 3 seconds
-    setShowMessage(true);
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 3000);
+  
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        setShowMessage(true);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          address: "",
+          message: "",
+        });
+  
+        // Auto-hide success message
+        setTimeout(() => setShowMessage(false), 3000);
+      } else {
+        console.error("Error submitting the form");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
+  
 
   const handleReset = () => {
     setFormData({
