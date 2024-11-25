@@ -1,11 +1,13 @@
 const Joi = require('joi');
 
-exports.validateContact = (data) => {
+exports.validatePartner = (data) => {
     const schema = Joi.object({
         name: Joi.string().required(),
+        phone: Joi.string().required(),
         email: Joi.string().email().required(),
-        number: Joi.number().required(),
+        companyName: Joi.string().required(),
         address: Joi.string().required(),
+        partnershipType: Joi.string().required(),
         message: Joi.string().required(),
     });
 
