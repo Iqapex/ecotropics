@@ -1,11 +1,13 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const connectDB = require("./config/db");
+const { checkStripeConnection } = require("./config/stripe"); // Import Stripe checker
 const contactRoute = require("./routes/contactRoutes");
 const volunteerRoute = require("./routes/volunteerRoutes");
 const partnerRoute = require("./routes/partnerRoutes");
-const joinUsRoute = require("./routes/joinUsRoutes"); // Import JoinUs route
+const joinUsRoute = require("./routes/joinUsRoutes");
+const stripeRoute = require("./stripe");
 
 dotenv.config();
 
@@ -20,21 +22,18 @@ app.use(cors());
 app.use("/api/contact", contactRoute);
 app.use("/api/volunteer", volunteerRoute);
 app.use("/api/partner", partnerRoute);
-app.use("/api/joinus", joinUsRoute); // Use JoinUs route
+app.use("/api/joinus", joinUsRoute);
+app.use("/api/stripe", stripeRoute);
 
 // Root Route
 app.get("/", (req, res) => {
     res.send("Backend is working!");
 });
 
-// MongoDB Connection
-mongoose
-    .connect(process.env.MONGODB_URI)
-    .then(() => {
-        console.log("Connected to MongoDB");
-        app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
-    })
-    .catch((error) => {
-        console.error("MongoDB connection error:", error);
-        process.exit(1); // Exit process on error
-    });
+// Test Stripe Connection
+checkStripeConnection();
+
+// Connect to MongoDB and start the server
+connectDB().then(() => {
+    app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+});

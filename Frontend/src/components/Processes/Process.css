@@ -63,6 +63,34 @@
   margin-bottom: 2rem;
 }
 
+.modal {
+  position: absolute;
+  z-index: 1000;
+  background: transparent;
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Ensure the modal doesn't exceed the viewport on small devices */
+@media screen and (max-width: 768px) {
+  .modal {
+    left: auto;
+    right: 10px;
+    width: 90%;
+  }
+}
+
+
 /* Bounce effect for arrows */
 @keyframes bounceArrow {
   0%, 100% {
