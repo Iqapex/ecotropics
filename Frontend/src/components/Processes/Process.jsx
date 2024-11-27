@@ -24,7 +24,7 @@ const steps = [
       { label: 'Message', name: 'message', type: 'textarea', placeholder: 'Additional message', required: false },
     ],
   },
-  {
+{
     title: 'Partner with Us',
     description: 'We partner with businesses, NGOs, and governments to expand impact.',
     formFields: [
@@ -32,10 +32,11 @@ const steps = [
       { label: 'Email Address', name: 'email', type: 'email', placeholder: 'Enter your email', required: true },
       { label: 'Phone Number', name: 'phone', type: 'text', placeholder: 'Enter your phone number', required: true },
       { label: 'Company Name', name: 'companyName', type: 'text', placeholder: 'Enter your company name', required: true },
-      { label: 'Partnership Type', name: 'partnershipType', type: 'text', placeholder: 'Sponsorship/Collaboration', required: true },
-      { label: 'Message', name: 'message', type: 'textarea', placeholder: 'Additional message', required: false },
-    ],
-  },
+       { label: 'Address', name: 'address', type: 'text', placeholder: 'Enter your address', required: true }, // Add this line
+        { label: 'Partnership Type', name: 'partnershipType', type: 'text', placeholder: 'Sponsorship/Collaboration', required: true },
+        { label: 'Message', name: 'message', type: 'textarea', placeholder: 'Additional message', required: false },
+      ],
+    },
 ];
 
 const Process = () => {
@@ -82,6 +83,7 @@ const Process = () => {
     const apiEndpoint = selectedStep.title === 'Volunteer' ? 'http://localhost:5000/api/volunteer' :
                         selectedStep.title === 'Partner with Us' ? 'http://localhost:5000/api/partner' :
                         selectedStep.title === 'Donate' ? 'http://localhost:5000/api/donate' :
+                        null;
 
     await fetch(apiEndpoint, {
       method: 'POST',
@@ -94,6 +96,7 @@ const Process = () => {
         alert(`${selectedStep.title} form submitted successfully`);
         closePopup();
       } else {
+        console.error("Error submitting the form:", errorData);
         alert('Error submitting the form');
       }
     });
@@ -141,7 +144,7 @@ const Process = () => {
       <h1 className="process-heading">Get Involved</h1>
       <p className="process-para">
         ZAMSOF relies on the collective effort of individuals, communities, and
-        organizations to drive change. Here’s how you can show your solidarity
+        organizations to drive change. Here's how you can show your solidarity
         and support the movement:
       </p>
       <div className="process-container">

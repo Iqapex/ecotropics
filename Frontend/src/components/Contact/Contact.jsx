@@ -43,8 +43,9 @@ function Contact() {
         // Auto-hide success message
         setTimeout(() => setShowMessage(false), 3000);
       } else {
-        console.error("Error submitting the form");
-      }
+        const errorData = await response.json();
+        console.error("Error submitting the form:", errorData);
+    }
     } catch (error) {
       console.error("Error:", error);
     }
@@ -163,8 +164,7 @@ function Contact() {
                 required
               ></textarea>
             </div>
-          </form>
-          <div className="button-group">
+            <div className="button-group">
             <button type="submit" className="submit-btn">
               Submit
             </button>
@@ -172,6 +172,7 @@ function Contact() {
               Reset
             </button>
           </div>
+          </form>
         </div>
       </div>
     </>
