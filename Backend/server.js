@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 const { checkStripeConnection } = require("./config/stripe"); // Import Stripe checker
 const contactRoute = require("./routes/contactRoutes");
@@ -14,9 +15,16 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+const corsOptions = {
+    origin: "http://localhost:5174/",
+    methods: "GET, POST, PUT, DELETE",
+    optionsSuccessStatus: 200, // Some legacy browsers (IE11, various versions of Android) choke on 204
+    credentials: true,
+}
+
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cors());
+app.use(bodyParser.json());
 
 // Routes
 app.use("/api/contact", contactRoute);
@@ -29,6 +37,11 @@ app.use("/api/stripe", stripeRoute);
 app.get("/", (req, res) => {
     res.send("Backend is working!");
 });
+
+app.post("/", (req, res) => {
+    console.log(req.body);
+    res.send("Data received");
+})
 
 // Test Stripe Connection
 checkStripeConnection();

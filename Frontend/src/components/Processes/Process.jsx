@@ -76,13 +76,14 @@ const Process = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    console.log(formData)
     e.preventDefault();
-    const apiEndpoint = selectedStep.title === 'Volunteer' ? '/api/volunteer' :
-                        selectedStep.title === 'Partner with Us' ? '/api/partner' :
-                        '/api/donate';  // Donation API endpoint
+    const apiEndpoint = selectedStep.title === 'Volunteer' ? 'http://localhost:5000/api/volunteer' :
+                        selectedStep.title === 'Partner with Us' ? 'http://localhost:5000/api/partner' :
+                        selectedStep.title === 'Donate' ? 'http://localhost:5000/api/donate' :
 
-    fetch(apiEndpoint, {
+    await fetch(apiEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -160,7 +161,7 @@ const Process = () => {
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             {renderForm()}
             <button className="close-btn" onClick={closePopup}>
-              Close
+              X
             </button>
           </div>
         </div>

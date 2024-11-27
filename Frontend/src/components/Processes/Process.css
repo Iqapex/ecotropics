@@ -70,7 +70,6 @@
   left: 0;
   width: auto;
   height: auto;
-  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,8 +80,8 @@
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
   border-radius: 10px;
   padding: 2rem;
-  max-width: 400px;
-  width: 90%;
+  width: 32rem;
+  align-items: center;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   position: relative;
@@ -228,7 +227,7 @@
 }
 
 .close-btn:hover {
-  background: #a00;
+  background: rgb(91, 87, 87);
 }
 
 
