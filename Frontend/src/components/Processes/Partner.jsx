@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import "./Process.css";
+import React, { useState } from 'react';
+import "./Partner.css"
 
 
-const PartnerForm = ({ closePopup }) => {
+const Partner = ({ onClose }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    companyName: "",
-    address: "",
-    partnershipType: "",
-    message: "",
+    name: '',
+    email: '',
+    phone: '',
+    companyName: '',
+    address: '',
+    partnershipType: '',
+    message: '',
   });
 
   const handleChange = (e) => {
@@ -20,30 +20,28 @@ const PartnerForm = ({ closePopup }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/partner", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
+    const apiEndpoint = 'http://localhost:5000/api/partner';
+    
+    await fetch(apiEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    }).then(response => {
       if (response.ok) {
-        alert("Partner form submitted successfully");
-        closePopup();
+        alert('Partnership form submitted successfully');
+        onClose();
       } else {
-        alert("Error submitting partner form");
+        alert('Error submitting the form');
       }
-    } catch (error) {
-      console.error("Network error:", error);
-      alert("Network error, please try again later.");
-    }
+    });
   };
 
   return (
     <form className="popup-form" onSubmit={handleSubmit}>
       <h2>Partner Form</h2>
+      <div className='form-input'>
       <div className="form-group">
         <label>Full Name</label>
         <input
@@ -110,6 +108,7 @@ const PartnerForm = ({ closePopup }) => {
           required
         />
       </div>
+      </div>
       <div className="form-group">
         <label>Message</label>
         <textarea
@@ -117,13 +116,12 @@ const PartnerForm = ({ closePopup }) => {
           value={formData.message}
           onChange={handleChange}
           placeholder="Additional message"
+          rows="4"
         />
       </div>
-      <button type="submit" className="submit-btn">
-        Submit
-      </button>
+      <button type="submit" className="submit-btn">Submit</button>
     </form>
   );
 };
 
-export default PartnerForm;
+export default Partner;

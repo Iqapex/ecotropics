@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "./Process.css";
+import "./Donation.css";
 
-
-const DonateForm = ({ closePopup }) => {
+const Donation = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,77 +16,70 @@ const DonateForm = ({ closePopup }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch("http://localhost:5000/api/donate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    const apiEndpoint = "http://localhost:5000/api/donate";
 
+    await fetch(apiEndpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((response) => {
       if (response.ok) {
-        alert("Donation submitted successfully");
-        closePopup();
+        alert("Thank you for your generous donation!");
+        onClose();
       } else {
-        alert("Error submitting donation");
+        alert("Oops! Something went wrong.");
       }
-    } catch (error) {
-      console.error("Network error:", error);
-      alert("Network error, please try again later.");
-    }
+    });
   };
 
   return (
     <form className="popup-form" onSubmit={handleSubmit}>
-      <h2>Donate Form</h2>
-      <div className="form-group">
-        <label>Full Name</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter your full name"
-          required
-        />
+      <h2>Donate Now</h2>
+      <div className="info">
+        <div className="form-group">
+          <label htmlFor="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="amount">Donation Amount</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            value={formData.amount}
+            onChange={handleChange}
+            placeholder="Enter donation amount"
+            required
+          />
+        </div>
+        </div>
+        <div className="btn">
+        <div className="form-group full-width">
+          <label htmlFor="message">Message (Optional)</label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Write your message here"
+          />
+        </div>
+        <button type="submit" className="submit-btn">
+          Donate
+        </button>
       </div>
-      <div className="form-group">
-        <label>Email Address</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Amount</label>
-        <input
-          type="number"
-          name="amount"
-          value={formData.amount}
-          onChange={handleChange}
-          placeholder="Enter donation amount"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Message</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Additional message"
-        />
-      </div>
-      <button type="submit" className="submit-btn">
-        Submit
-      </button>
     </form>
   );
 };
 
-export default DonateForm;
+export default Donation;

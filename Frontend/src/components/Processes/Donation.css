@@ -1,0 +1,93 @@
+.popup-form {
+  max-width: 700px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.popup-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Grid Layout for Inputs */
+.info {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 10px; /* Maintain space between fields */
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 10px); /* 50% width, with gap adjustment */
+  display: flex;
+  flex-direction: column;
+  min-width: 100px; /* Prevent collapse on very small screens */
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Full Width for Buttons */
+.btn,
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #0056b3;
+}
+
+/* Media Queries for Small Screens */
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column; /* Stack fields vertically */
+    gap: 15px; /* Increase gap for better spacing */
+  }
+
+  .form-group {
+    flex: 1 1 100%; /* Full width for all inputs */
+  }
+}

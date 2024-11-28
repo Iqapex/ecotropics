@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Process.css";
+import "./Volunteer.css";
 
 
 const VolunteerForm = ({ closePopup }) => {
@@ -7,8 +7,8 @@ const VolunteerForm = ({ closePopup }) => {
     name: "",
     email: "",
     phone: "",
-    skills: "",
     availability: "",
+    skills: "",
     message: "",
   });
 
@@ -43,6 +43,7 @@ const VolunteerForm = ({ closePopup }) => {
   return (
     <form className="popup-form" onSubmit={handleSubmit}>
       <h2>Volunteer Form</h2>
+      <div className="form-input">
       <div className="form-group">
         <label>Full Name</label>
         <input
@@ -77,16 +78,6 @@ const VolunteerForm = ({ closePopup }) => {
         />
       </div>
       <div className="form-group">
-        <label>Skills & Expertise</label>
-        <textarea
-          name="skills"
-          value={formData.skills}
-          onChange={handleChange}
-          placeholder="Tell us about your skills"
-          required
-        />
-      </div>
-      <div className="form-group">
         <label>Availability</label>
         <input
           type="text"
@@ -98,6 +89,16 @@ const VolunteerForm = ({ closePopup }) => {
         />
       </div>
       <div className="form-group">
+        <label>Skills & Expertise</label>
+        <textarea
+          name="skills"
+          value={formData.skills}
+          onChange={handleChange}
+          placeholder="Tell us about your skills"
+          required
+        />
+      </div>
+      <div className="form-group">
         <label>Message</label>
         <textarea
           name="message"
@@ -105,6 +106,7 @@ const VolunteerForm = ({ closePopup }) => {
           onChange={handleChange}
           placeholder="Additional message"
         />
+      </div>
       </div>
       <button type="submit" className="submit-btn">
         Submit
