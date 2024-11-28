@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Volunteer.css";
 
-
 const VolunteerForm = ({ closePopup }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -44,69 +43,69 @@ const VolunteerForm = ({ closePopup }) => {
     <form className="popup-form" onSubmit={handleSubmit}>
       <h2>Volunteer Form</h2>
       <div className="form-input">
-      <div className="form-group">
-        <label>Full Name</label>
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Enter your full name"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Email Address</label>
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Enter your email"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Phone Number</label>
-        <input
-          type="text"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Enter your phone number"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Availability</label>
-        <input
-          type="text"
-          name="availability"
-          value={formData.availability}
-          onChange={handleChange}
-          placeholder="When are you available?"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Skills & Expertise</label>
-        <textarea
-          name="skills"
-          value={formData.skills}
-          onChange={handleChange}
-          placeholder="Tell us about your skills"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Message</label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Additional message"
-        />
-      </div>
+        <div className="form-group">
+          <label>Full Name</label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Email Address</label>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Phone Number</label>
+          <input
+            type="text"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Availability</label>
+          <input
+            type="text"
+            name="availability"
+            value={formData.availability}
+            onChange={handleChange}
+            placeholder="When are you available?"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Skills & Expertise</label>
+          <textarea
+            name="skills"
+            value={formData.skills}
+            onChange={handleChange}
+            placeholder="Tell us about your skills"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Message</label>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Additional message"
+          />
+        </div>
       </div>
       <button type="submit" className="submit-btn">
         Submit
