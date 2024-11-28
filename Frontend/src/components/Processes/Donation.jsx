@@ -62,18 +62,18 @@ const Donation = ({ onClose }) => {
             required
           />
         </div>
-        </div>
-        <div className="btn">
-        <div className="form-group full-width">
-          <label htmlFor="message">Message (Optional)</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Write your message here"
-          />
-        </div>
+      </div>
+      <div className="form-group full-width">
+        <label htmlFor="message">Message (Optional)</label>
+        <textarea
+          id="message"
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          placeholder="Write your message here"
+        />
+      </div>
+      <div className="form-btn">
         <button type="submit" className="submit-btn">
           Donate
         </button>

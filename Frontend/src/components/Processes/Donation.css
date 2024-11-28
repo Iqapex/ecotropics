@@ -14,21 +14,20 @@
   color: #333;
 }
 
-/* Grid Layout for Inputs */
 .info {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  gap: 10px; /* Maintain space between fields */
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .form-group {
-  flex: 1 1 calc(50% - 10px); /* 50% width, with gap adjustment */
+  flex: 1 1 calc(50% - 10px); /* For name and donation fields */
   display: flex;
   flex-direction: column;
-  min-width: 100px; /* Prevent collapse on very small screens */
+  min-width: 100px;
 }
 
-.form-group label {
+.form-group.label {
   margin-bottom: 8px;
   font-weight: bold;
   color: #555;
@@ -50,21 +49,23 @@
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Full Width for Buttons */
-.btn,
-.form-group {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 textarea {
   resize: none;
 }
 
-/* Submit Button */
+.form-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-group {
+  flex: 1 1 100%; /* For the message field */
+  display: flex;
+  flex-direction: column;
+}
+
 .submit-btn {
-  width: 100%;
   padding: 10px 20px;
   background: #007bff;
   color: white;
@@ -74,20 +75,24 @@ textarea {
   cursor: pointer;
   margin-top: 20px;
   transition: background 0.3s ease;
+  text-align: center;
 }
 
 .submit-btn:hover {
   background: #0056b3;
 }
 
-/* Media Queries for Small Screens */
 @media (max-width: 768px) {
   .info {
-    flex-direction: column; /* Stack fields vertically */
-    gap: 15px; /* Increase gap for better spacing */
+      flex-direction: column;
+      gap: 15px;
   }
 
   .form-group {
-    flex: 1 1 100%; /* Full width for all inputs */
+      flex: 1 1 100%;
+  }
+
+  .message-group {
+      flex: 1 1 100%; /* Ensure message group takes full width on mobile */
   }
 }

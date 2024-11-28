@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 const { checkStripeConnection } = require("./config/stripe"); // Import Stripe checker
 const contactRoute = require("./routes/contactRoutes");
+const donationRoute = require('./routes/donationRoutes');
 const volunteerRoute = require("./routes/volunteerRoutes");
 const partnerRoute = require("./routes/partnerRoutes");
 const joinUsRoute = require("./routes/joinUsRoutes");
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use("/api/contact", contactRoute);
+app.use("/api/donation", donationRoute);
 app.use("/api/volunteer", volunteerRoute);
 app.use("/api/partner", partnerRoute);
 app.use("/api/joinus", joinUsRoute);

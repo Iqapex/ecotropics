@@ -18,6 +18,7 @@
     "express": "^4.21.1",
     "joi": "^17.13.3",
     "mongoose": "^8.8.2",
+    "nodemailer": "^6.9.16",
     "stripe": "^17.4.0"
   },
   "devDependencies": {
