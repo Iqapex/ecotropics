@@ -11,6 +11,9 @@ const VolunteerForm = ({ closePopup }) => {
     message: "",
   });
 
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -18,6 +21,9 @@ const VolunteerForm = ({ closePopup }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+
     try {
       const response = await fetch("http://localhost:5000/api/volunteer", {
         method: "POST",
@@ -28,10 +34,26 @@ const VolunteerForm = ({ closePopup }) => {
       });
 
       if (response.ok) {
-        alert("Volunteer form submitted successfully");
-        closePopup();
+        setSuccessMessage(
+          "Thank you for volunteering with us! We will connect with you ASAP."
+        );
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          availability: "",
+          skills: "",
+          message: "",
+        });
+        setTimeout(() => {
+          setSuccessMessage("");
+          closePopup();
+        }, 3000);
       } else {
-        alert("Error submitting volunteer form");
+        const errorData = await response.json();
+        setErrorMessage(
+          errorData.message || "An error occurred while submitting the form."
+        );
       }
     } catch (error) {
       console.error("Network error:", error);
@@ -42,6 +64,8 @@ const VolunteerForm = ({ closePopup }) => {
   return (
     <form className="popup-form" onSubmit={handleSubmit}>
       <h2>Volunteer Form</h2>
+      {successMessage && <div className="success-message">{successMessage}</div>}
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
       <div className="form-input">
         <div className="form-group">
           <label>Full Name</label>
