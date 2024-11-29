@@ -1,5 +1,5 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Countdown from "react-countdown";
 import "./News.css";
@@ -8,38 +8,62 @@ import { newsData } from "../../Data/News";
 function UpcomingEvents() {
   const upcomingEvents = newsData.filter((item) => item.type === "upcoming");
 
+  // Animation variants
+  const fadeInVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (delay) => ({ opacity: 1, y: 0, transition: { delay } }),
+  };
+
   return (
     <div className="upevent">
-      <Fade bottom>
-        <h2>Upcoming Events</h2>
-      </Fade>
+      {/* Title Animation */}
+      <motion.h2
+        initial="hidden"
+        animate="visible"
+        custom={0}
+        variants={fadeInVariant}
+      >
+        Upcoming Events
+      </motion.h2>
+
       <div className="events-section">
         {upcomingEvents.length > 0 ? (
           upcomingEvents.map((event) => (
-            <Fade bottom delay={event.id * 200} key={event.id}>
-              <div className="news-item">
-                <img
-                  src={event.imgSrc}
-                  alt={event.title}
-                  className="news-image"
-                />
-                <div className="news-content">
-                  <h3>{event.title}</h3>
-                  <p>{event.description}</p>
-                  <div className="countdown-timer">
-                    <Countdown date={new Date(event.date).getTime()} />
-                  </div>
-                  <Link to={event.link} className="read-more">
-                    Read More
-                  </Link>
+            <motion.div
+              className="news-item"
+              key={event.id}
+              initial="hidden"
+              animate="visible"
+              custom={event.id * 0.2}
+              variants={fadeInVariant}
+            >
+              <img
+                src={event.imgSrc}
+                alt={event.title}
+                className="news-image"
+              />
+              <div className="news-content">
+                <h3>{event.title}</h3>
+                <p>{event.description}</p>
+                <div className="countdown-timer">
+                  <Countdown date={new Date(event.date).getTime()} />
                 </div>
+                <Link to={event.link} className="read-more">
+                  Read More
+                </Link>
               </div>
-            </Fade>
+            </motion.div>
           ))
         ) : (
-          <Fade bottom>
-            <p className="placeholder">No updates currently. Stay tuned for upcoming events!</p>
-          </Fade>
+          <motion.p
+            className="placeholder"
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            variants={fadeInVariant}
+          >
+            No updates currently. Stay tuned for upcoming events!
+          </motion.p>
         )}
       </div>
     </div>

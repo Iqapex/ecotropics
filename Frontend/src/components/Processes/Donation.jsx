@@ -3,7 +3,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { CardElement, Elements, useStripe, useElements } from "@stripe/react-stripe-js";
 import "./Donation.css";
 
-const stripePromise = loadStripe("pk_test_51QORBPIeRdsc484ic5D5X4IBH2fQmW3LKI3uaLJzLrMwWYKq9LmyduWrWQjId9XCmLAAqzs6xuIdGERhb8YG6PiJ00bjk21NNh"); // Replace with your Stripe publishable key
+const stripePromise = loadStripe("pk_test_51QQRVrLu9OXlRS4z7rmnNjsLckPVZ7QSUi5qRUKf0fY6z3HfTN8mti5DtzyPvlYXsteN6ju8HtTjoqJqGDIXkswx00pKdjnoEh"); // Replace with your Stripe publishable key
 
 const DonationForm = ({ onClose }) => {
   const [formData, setFormData] = useState({

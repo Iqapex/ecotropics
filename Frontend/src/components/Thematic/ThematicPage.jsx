@@ -1,6 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Thematic.css';
-import Fade from 'react-reveal/Fade';
 
 // Import content
 import {
@@ -11,16 +11,36 @@ import {
   mobilizationStrategies,
 } from '../../Data/Thematic';
 
+const fadeInVariant = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (delay) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay, duration: 0.5 },
+  }),
+};
 
 const ThematicPage = () => {
   return (
     <div className="thematic-page">
       {/* Intro Section */}
       <section className="intro">
-        <Fade bottom>
-          <h2>{introContent.heading}</h2>
-          <p>{introContent.description}</p>
-        </Fade>
+        <motion.h2
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          variants={fadeInVariant}
+        >
+          {introContent.heading}
+        </motion.h2>
+        <motion.p
+          initial="hidden"
+          animate="visible"
+          custom={0.2}
+          variants={fadeInVariant}
+        >
+          {introContent.description}
+        </motion.p>
       </section>
 
       {/* Thematic Areas Section */}
@@ -28,12 +48,17 @@ const ThematicPage = () => {
         <h3>Thematic Areas List</h3>
         <div className="area-cards">
           {thematicAreas.map((area, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="area-card">
-                <h4>{area.title}</h4>
-                <p>{area.text}</p>
-              </div>
-            </Fade>
+            <motion.div
+              className="area-card"
+              key={index}
+              initial="hidden"
+              animate="visible"
+              custom={index * 0.2}
+              variants={fadeInVariant}
+            >
+              <h4>{area.title}</h4>
+              <p>{area.text}</p>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -43,12 +68,17 @@ const ThematicPage = () => {
         <h3>Program Highlights</h3>
         <div className="highlights-timeline">
           {programHighlights.map((highlight, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="highlight">
-                <h4>{highlight.title}</h4>
-                <p>{highlight.text}</p>
-              </div>
-            </Fade>
+            <motion.div
+              className="highlight"
+              key={index}
+              initial="hidden"
+              animate="visible"
+              custom={index * 0.2}
+              variants={fadeInVariant}
+            >
+              <h4>{highlight.title}</h4>
+              <p>{highlight.text}</p>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -58,12 +88,17 @@ const ThematicPage = () => {
         <h3>Format of Social Forum</h3>
         <div className="forum-list">
           {socialForumFormat.map((forum, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="forum-item">
-                <h4>{forum.title}</h4>
-                <p>{forum.text}</p>
-              </div>
-            </Fade>
+            <motion.div
+              className="forum-item"
+              key={index}
+              initial="hidden"
+              animate="visible"
+              custom={index * 0.2}
+              variants={fadeInVariant}
+            >
+              <h4>{forum.title}</h4>
+              <p>{forum.text}</p>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -73,12 +108,17 @@ const ThematicPage = () => {
         <h3>Mobilization Strategies</h3>
         <div className="strategy-list">
           {mobilizationStrategies.map((strategy, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="strategy-item">
-                <h4>{strategy.title}</h4>
-                <p>{strategy.text}</p>
-              </div>
-            </Fade>
+            <motion.div
+              className="strategy-item"
+              key={index}
+              initial="hidden"
+              animate="visible"
+              custom={index * 0.2}
+              variants={fadeInVariant}
+            >
+              <h4>{strategy.title}</h4>
+              <p>{strategy.text}</p>
+            </motion.div>
           ))}
         </div>
       </section>
