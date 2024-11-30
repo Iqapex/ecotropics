@@ -10,9 +10,10 @@ const Footer = () => {
     { name: "News", path: "/news" },
     { name: "About Us", path: "/about" },
   ];
+
   const featureLinks = [
-    { name: "Projects", path: "/projects" },
-    { name: "Events", path: "/news#upcomming-event" }, // Update the path to include #news-container
+    { name: "Projects", path: "/projects", scrollToTop: true },
+    { name: "Events", path: "/news#upcomming-event" },
     { name: "Get Involved", path: "/#get-involved" },
     { name: "Donate", path: "/#get-involved" },
   ];
@@ -59,7 +60,10 @@ const Footer = () => {
           <ul>
             {featureLinks.map((link, index) => (
               <li key={index}>
-                <Link to={link.path}>
+                <Link
+                  to={link.path}
+                  onClick={link.scrollToTop ? scrollToTop : null} // Apply scrollToTop only for Projects
+                >
                   {link.name}
                 </Link>
               </li>
