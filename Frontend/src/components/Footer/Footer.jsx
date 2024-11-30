@@ -1,10 +1,29 @@
 import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Import FontAwesome icons
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import Link for routing
 import "./Footer.css";
 
 const Footer = () => {
-  const quickLinks = ["Home", "Thematic", "News", "About Us"];
-  const featureLinks = ["Projects", "Events", "Get Involved", "Donate"];
+  const quickLinks = [
+    { name: "Home", path: "/" },
+    { name: "Thematic", path: "/thematic" },
+    { name: "News", path: "/news" },
+    { name: "About Us", path: "/about" },
+  ];
+  const featureLinks = [
+    { name: "Projects", path: "/projects" },
+    { name: "Events", path: "/news#upcomming-event" }, // Update the path to include #news-container
+    { name: "Get Involved", path: "/#get-involved" },
+    { name: "Donate", path: "/#get-involved" },
+  ];
+
+  // Scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <footer className="footer">
@@ -26,9 +45,9 @@ const Footer = () => {
           <ul>
             {quickLinks.map((link, index) => (
               <li key={index}>
-                <a href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
-                  {link}
-                </a>
+                <Link to={link.path} onClick={scrollToTop}>
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -40,9 +59,9 @@ const Footer = () => {
           <ul>
             {featureLinks.map((link, index) => (
               <li key={index}>
-                <a href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}>
-                  {link}
-                </a>
+                <Link to={link.path}>
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -58,7 +77,7 @@ const Footer = () => {
             <a href="mailto:zamsof@zambia.co.zm">zamsof@zambia.co.zm</a> /{" "}
             <a href="mailto:zamsof.forum@gmail.com">zamsof.forum@gmail.com</a>
           </p>
-          <p>Phone: +123 456 7890</p>
+          <p>Phone: + 260 950 72 11 22 / +260 978 80 30 32</p>
         </div>
       </div>
 

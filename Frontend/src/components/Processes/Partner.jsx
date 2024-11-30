@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Partner.css";
 
 const Partner = ({ closePopup }) => {
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",

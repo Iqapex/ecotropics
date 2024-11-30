@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Process.css';
 import Donation from './Donation';
 import Volunteer from './Volunteer';
@@ -21,6 +21,17 @@ const steps = [
 ];
 
 const Process = () => {
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
+
   const [selectedStep, setSelectedStep] = useState(null);
 
   const handleCardClick = (step) => {
@@ -46,7 +57,7 @@ const Process = () => {
 
   return (
     <div className="process-section">
-      <h1 className="process-heading">Get Involved</h1>
+      <h1 className="process-heading" id='get-involved'>Get Involved</h1>
       <p className="process-para">
         ZAMSOF relies on the collective effort of individuals, communities, and
         organizations to drive change. Here's how you can show your solidarity

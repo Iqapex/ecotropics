@@ -1,60 +1,62 @@
-// Team.js
 
 import React, { useState } from 'react';
-import profile from '../../assets/client-3.png';
 import './Team.css'; // Import CSS file for styling
 
+
+import President from '../../assets/president.jpg';
+// import VicePresident from '../../assets/vice-president.jpg';
+// import Secretary from '../../assets/secretary.jpg';
+const managementTeam = [
+  {
+    id: 1,
+    name: 'Luyando Mweene',
+    title: 'President',
+    description: 'ZAMSOF Youth Connect Initiative',
+    image: President,
+  },
+  // {
+  //   id: 2,
+  //   name: 'John Doe',
+  //   title: 'Vice President',
+  //   description: 'Empowering Communities Program',
+  //   image: VicePresident,
+  // },
+  // {
+  //   id: 3,
+  //   name: 'Jane Smith',
+  //   title: 'Secretary',
+  //   description: 'Environmental Advocacy Project',
+  //   image: Secretary,
+  // },
+];
+
 function Team() {
-  // State variables to track which section to display
+  // State variable to track which section to display
   const [showManagement, setShowManagement] = useState(true);
-  const [showPartners, setShowPartners] = useState(false);
 
   return (
     <div className="team-container">
+      {/* Buttons for toggling sections */}
       <div className="button-container">
-        <button className={`butn ${showManagement?'visibleT':''}`}onClick={() =>{ setShowManagement(true) 
-        setShowPartners(false)
-        }}>Management</button>
-        <button className={`butn ${showPartners?'visibleT':''}`}onClick={() => {setShowPartners(true)
-        setShowManagement(false)}}>Partners</button>
+        <button
+          className={`butn ${showManagement ? 'visibleT' : ''}`}
+          onClick={() => setShowManagement(true)}
+        >
+          Management
+        </button>
       </div>
+
+      {/* Management Section */}
       {showManagement && (
         <div className="management-section">
-          {/* Display Management details */}
-          {/* Example: */}
-          <div className="member">
-            <img src={profile} alt="Management Member 1" />
-            <p>Management Member 1 Details</p>
-          </div>
-          <div className="member">
-            <img src={profile} alt="Management Member 2" />
-            <p>Management Member 2 Details</p>
-          </div>
-          {/* Add more members as needed */}
-        </div>
-      )}
-      {showPartners && (
-        <div className="partners-section">
-          {/* Display Partners details */}
-          {/* Example: */}
-          <div className="partners">
-            <img src={profile} alt="Partner 1" />
-            <p>Partner 1 Details</p>
-          </div>
-          <div className="partners">
-            <img src={profile} alt="Partner 2" />
-            <p>Partner 2 Details</p>
-          </div>
-          <div className="partners">
-            <img src={profile} alt="Partner 1" />
-            <p>Partner 1 Details</p>
-          </div>
-          <div className="partners">
-            <img src={profile} alt="Partner 2" />
-            <p>Partner 2 Details</p>
-          </div>
-          
-          {/* Add more partners as needed */}
+          {managementTeam.map((member) => (
+            <div className="member" key={member.id}>
+              <img src={member.image} alt={member.name} />
+              <p>{member.name}</p>
+              <h2>{member.title}</h2>
+              <p>{member.description}</p>
+            </div>
+          ))}
         </div>
       )}
     </div>

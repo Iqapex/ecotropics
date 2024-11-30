@@ -10,6 +10,7 @@
   margin-bottom: 2rem;
 }
 
+/* Button Container */
 .button-container {
   display: flex;
   flex-direction: column;
@@ -43,8 +44,8 @@ button:hover {
   border-color: #e2e8f0;
 }
 
-.management-section,
-.partners-section {
+/* Management Section */
+.management-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -53,50 +54,69 @@ button:hover {
   margin-bottom: 2rem;
 }
 
-.member,
-.partners {
+/* Member Card */
+.member {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Increased padding for a spacious look */
+  border-radius: 12px; /* Softer corners for a modern look */
+  background-color: #ffffff;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow for more depth */
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-  width: 220px;
+  width: 250px; /* Increased width for better readability */
   text-align: center;
-  height: 100%;
+  gap: 10px; /* Ensures consistent spacing between child elements */
+  overflow: hidden; /* Prevents content overflow */
 }
 
-.member:hover,
-.partners:hover {
+.member:hover {
   transform: translateY(-10px);
-  background-color: #f0f0f0;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Hover shadow effect */
+  background-color: #f9f9f9; /* Subtle hover effect for user feedback */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Stronger hover shadow effect */
 }
 
-.member img,
-.partners img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.member img {
+  width: 130px; /* Slightly larger for emphasis */
+  height: 170px;
+  border-radius: 8px; /* Rounded corners for the image */
   object-fit: cover;
-  margin-bottom: 12px;
+  margin-bottom: 10px; /* Consistent spacing below the image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow for the image */
+  transition: transform 0.3s ease; /* Smooth hover animation for the image */
 }
 
-.member p,
-.partners p {
-  color: #333;
+.member img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.member h2 {
+  margin: 5px 0; /* Minimal spacing for a clean look */
+  font-size: 1.4rem; /* Slightly larger font for emphasis */
   font-weight: bold;
-  font-size: 1rem;
+  color: #333333;
 }
 
+.member p {
+  margin: 5px 0;
+  color: #555555; /* Lighter text color for descriptions */
+  font-size: 1rem;
+  line-height: 1.5; /* Improved readability */
+}
+
+.member p:first-of-type {
+  font-weight: bold; /* Highlighting the name */
+  font-size: 1.1rem;
+  color: #2d3748; /* Darker shade for the name */
+}
+
+/* Responsive Design */
+
+/* Large screens (1024px and below) */
 @media (max-width: 1024px) {
   .team-container {
     flex-direction: column;
     align-items: center;
-    padding: 30px;
   }
 
   .button-container {
@@ -108,15 +128,14 @@ button:hover {
     width: 250px;
   }
 
-  .management-section,
-  .partners-section {
+  .management-section {
     margin-right: 0;
   }
 }
 
+/* Medium screens (768px and below) */
 @media (max-width: 768px) {
-  .member,
-  .partners {
+  .member {
     width: 45%;
   }
 
@@ -129,9 +148,9 @@ button:hover {
   }
 }
 
+/* Small screens (576px and below) */
 @media (max-width: 576px) {
-  .member,
-  .partners {
+  .member {
     width: 100%;
   }
 

@@ -8,6 +8,7 @@ import About from "./Pages/About.jsx";
 import News from "./components/News/News.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Thematic from "./Pages/Thematic.jsx";
+import Project from "./components/Projects/Project.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/thematic",
         element: <Thematic />,// Replace with your actual Partner component
+      },
+      {
+        path: "/projects",
+        element: <Project />,
       },
       {
         path: "*",
