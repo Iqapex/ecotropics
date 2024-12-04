@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import img from "../../assets/hero2.jpg";
 import HeroAbout from "../HeroAbout/HeroAbout";
 import "./Contact.css"; // Import the separate CSS file
@@ -78,7 +78,7 @@ function Contact() {
           </p>
           <iframe
             className="map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.2453020182736!2d28.2970051!3d-15.4296642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x194a1c6162f979b5%3A0x4e83f29d6246850!2sChilimbulu%20Road%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2s!4v1601480211499!5m2!1sen!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1523.7072191765748!2d28.328460511828814!3d-15.449377000255534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19408d0065c82351%3A0x43f301a61cdfcaa4!2sZambia%20Social%20Forum%20(ZAMSOF)!5e0!3m2!1sen!2szm!4v0" 
             allowFullScreen=""
             loading="lazy"
           ></iframe>

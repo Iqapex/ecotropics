@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './Thematic.css';
 import Fade from 'react-reveal/Fade';
 
@@ -30,7 +30,7 @@ const ThematicPage = () => {
             <Fade bottom delay={200 * index} key={index}>
               <div className="area-card">
                 <h4>{area.title}</h4>
-                <p>{area.text}</p>
+                <p style={{color: '#1d1f1d'}}>{area.text}</p>
               </div>
             </Fade>
           ))}
@@ -45,7 +45,7 @@ const ThematicPage = () => {
             <Fade bottom delay={200 * index} key={index}>
               <div className="highlight">
                 <h4>{highlight.title}</h4>
-                <p>{highlight.text}</p>
+                <p style={{color: '#1d1f1d'}}>{highlight.text}</p>
               </div>
             </Fade>
           ))}
@@ -60,7 +60,7 @@ const ThematicPage = () => {
             <Fade bottom delay={200 * index} key={index}>
               <div className="forum-item">
                 <h4>{forum.title}</h4>
-                <p>{forum.text}</p>
+                <p style={{color: '#1d1f1d'}}>{forum.text}</p>
               </div>
             </Fade>
           ))}
@@ -74,8 +74,8 @@ const ThematicPage = () => {
           {mobilizationStrategies.map((strategy, index) => (
             <Fade bottom delay={200 * index} key={index}>
               <div className="strategy-item">
-                <h4>{strategy.title}</h4>
-                <p>{strategy.text}</p>
+                <h4 >{strategy.title}</h4>
+                <p style={{color: '#1d1f1d'}} >{strategy.text}</p>
               </div>
             </Fade>
           ))}

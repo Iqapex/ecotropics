@@ -90,14 +90,10 @@
 }
 
 .button-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 1rem;
 }
 
 .submit-btn, .reset-btn {
-  padding: 0.75rem 2rem;
   height: 48px;
   border-radius: 0.5rem;
   font-size: 1rem;

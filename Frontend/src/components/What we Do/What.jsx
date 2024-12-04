@@ -24,9 +24,12 @@ function What() {
             </h3>
             <h3 style={{ color: '#c50c0cf0' }}>Our Core Mission</h3>
 
-            <p>
-              ZAMSOF is committed to building a planetary society where relationships
-              between humans and the Earth are balanced, equitable, and sustainable. We advocate for policies that ensure inclusivity, resilience, and community empowerment, with a focus on the well-being of both people and the planet.
+            <p  style={{ color: '#1f2937' }}>
+            Zambia Social Forum (ZAMSOF) provides an inclusive platform for democratic dialogue and collective
+            actions, empowering marginalized communities to develop innovative solutions for climate justice,
+            Agroecology, food sovereignty, governance, human rights, and  gender equity, through holistic and
+            grassroots-led initiatives. while fostering National, regional and global partnerships for sustainable
+            future.
             </p>
 
             {/* Mission Items Cards */}

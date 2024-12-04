@@ -1,5 +1,5 @@
 // Mission.js
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import AboutData from "../../Data/About"; // Assuming About.js is in the same directory
 import './Mission.css';
 
@@ -29,6 +29,7 @@ const Mission = () => {
   return (
     <section id="mission-section" className="mission-section">
       <h1>Our Missions</h1>
+      <p></p>
       <div className="mission-container">
         {AboutData.missions.map((mission, index) => (
           <MissionCard

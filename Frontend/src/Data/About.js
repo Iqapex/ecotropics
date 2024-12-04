@@ -10,6 +10,11 @@ const AboutData = {
   },
   beliefs: [
     {
+      title: "Human Rights Based Approach ",
+      content:
+        "upholding principles of inclusive participation, social inclusion, non-discrimination, Accountability, Empowerment, and good government.",
+    },
+    {
       title: "Equality for All",
       content:
         "We strive to ensure equal opportunities and rights for every individual, regardless of race, gender, or socioeconomic background.",
@@ -58,21 +63,21 @@ const AboutData = {
     },
   ],
   missions: [
-    {
-      title: "Innovation in Agriculture",
-      content:
-        "At Food Finance, we foster innovation in agriculture. We empower entrepreneurs with knowledge and resources to drive advancements.",
-    },
-    {
-      title: "Sustainability",
-      content:
-        "We promote sustainable agricultural practices to ensure global food security. Our focus is on initiatives with lasting positive impacts.",
-    },
-    {
-      title: "Empowerment",
-      content:
-        "We provide financial support to create a community of agricultural leaders. Our mission is to empower individuals to drive positive change.",
-    },
+    // {
+    //   title: "Innovation in Agriculture",
+    //   content:
+    //     "At Food Finance, we foster innovation in agriculture. We empower entrepreneurs with knowledge and resources to drive advancements.",
+    // },
+    // {
+    //   title: "Sustainability",
+    //   content:
+    //     "We promote sustainable agricultural practices to ensure global food security. Our focus is on initiatives with lasting positive impacts.",
+    // },
+    // {
+    //   title: "Empowerment",
+    //   content:
+    //     "We provide financial support to create a community of agricultural leaders. Our mission is to empower individuals to drive positive change.",
+    // },
   ],
   strategies: [
     {
