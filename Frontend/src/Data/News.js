@@ -23,26 +23,26 @@ export const newsData = [
   //   type: "upcoming",
   //   date: "2024-12-15T00:00:00",
   // },
-  {
-    id: 3,
-    title: "Health Drive 2024",
-    description:
-      "Our Health Drive 2024 successfully provided free medical check-ups, offering consultations and healthcare services. This initiative focused on preventative care and early diagnosis, helping thousands of people receive critical health services.",
-    imgSrc:
-      "https://www.shutterstock.com/image-vector/heart-hand-giving-logo-template-260nw-2457545841.jpg",
-    link: "/past1",
-    type: "past",
-  },
-  {
-    id: 4,
-    title: "Educational Empowerment",
-    description:
-      "Through the Educational Empowerment initiative, we aim to provide children with the tools and resources needed to pursue education. The program focuses on ensuring that every child, especially those from marginalized communities, has access to quality education.",
-    imgSrc:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDjLek0tJU0Hr_7BeYev0y0mj9aDVz5g0wA&s",
-    link: "/past2",
-    type: "past",
-  },
+  // {
+  //   id: 3,
+  //   title: "Health Drive 2024",
+  //   description:
+  //     "Our Health Drive 2024 successfully provided free medical check-ups, offering consultations and healthcare services. This initiative focused on preventative care and early diagnosis, helping thousands of people receive critical health services.",
+  //   imgSrc:
+  //     "https://www.shutterstock.com/image-vector/heart-hand-giving-logo-template-260nw-2457545841.jpg",
+  //   link: "/past1",
+  //   type: "past",
+  // },
+  // {
+  //   id: 4,
+  //   title: "Educational Empowerment",
+  //   description:
+  //     "Through the Educational Empowerment initiative, we aim to provide children with the tools and resources needed to pursue education. The program focuses on ensuring that every child, especially those from marginalized communities, has access to quality education.",
+  //   imgSrc:
+  //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQDjLek0tJU0Hr_7BeYev0y0mj9aDVz5g0wA&s",
+  //   link: "/past2",
+  //   type: "past",
+  // },
 ];
 
 export const languages = [

@@ -1,30 +1,34 @@
-import React, { useState, useMemo } from 'react';
-import { FaCalendarAlt, FaGlobe, FaMapPin, FaUsers,  } from 'react-icons/fa';
-import img from '../../assets/hero2.jpg'
+import { useState, useMemo } from 'react';
+import Fade from 'react-reveal/Fade';
+import { FaCalendarAlt, FaGlobe, FaMapPin, FaUsers } from 'react-icons/fa';
 import './Project.css';
 import { projectData } from '../../Data/Project';
-import HeroAbout from '../HeroAbout/HeroAbout';
 
-const ProjectCard = ({ project }) => (
-  <div className="project-card">
-    <h3 className="project-title">{project.title}</h3>
-    <div className="project-meta">
-      <div className="meta-item">
-        <FaCalendarAlt size={18} />
-        <span>{project.duration}</span>
+const ProjectCard = ({ project }) => {
+  if (!project) return null; // Handle missing project props safely
+  return (
+    <div className="project-card">
+      <Fade bottom>
+        <h3 className="project-title">{project.title}</h3>
+      </Fade>
+      <div className="project-meta">
+        <div className="meta-item">
+          <FaCalendarAlt size={18} />
+          <span>{project.duration}</span>
+        </div>
+        <div className="meta-item">
+          <FaMapPin size={18} />
+          <span>{project.location}</span>
+        </div>
+        <div className="meta-item">
+          <FaUsers size={18} />
+          <span>{project.donor}</span>
+        </div>
       </div>
-      <div className="meta-item">
-        <FaMapPin size={18} />
-        <span>{project.location}</span>
-      </div>
-      <div className="meta-item">
-        <FaUsers size={18} />
-        <span>{project.donor}</span>
-      </div>
+      <p className="project-summary">{project.summary}</p>
     </div>
-    <p className="project-summary">{project.summary}</p>
-  </div>
-);
+  );
+};
 
 const ProjectsGrid = ({ projects }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -55,7 +59,9 @@ const ProjectsGrid = ({ projects }) => {
       <div className="projects-grid">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
+            <Fade bottom delay={index * 200} key={index}>
+              <ProjectCard key={index} project={project} />
+            </Fade>
           ))
         ) : (
           <p>No projects found</p> // No results message
@@ -68,7 +74,6 @@ const ProjectsGrid = ({ projects }) => {
 const Project = () => {
   return (
     <div className="app-container">
-      <HeroAbout text="Projects " img={img}/>
       <header className="header">
         <div className="header-content">
           <div className="header-title">

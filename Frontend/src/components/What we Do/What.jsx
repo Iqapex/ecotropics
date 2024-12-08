@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Fade from 'react-reveal/Fade';
 import './What.css';
 import { programItems } from '../../Data/Home';
@@ -24,7 +24,7 @@ function What() {
             </h3>
             <h3 style={{ color: '#c50c0cf0' }}>Our Core Mission</h3>
 
-            <p  style={{ color: '#1f2937' }}>
+            <p  style={{ color: '#1f2937', fontSize: '1rem' }}>
             Zambia Social Forum (ZAMSOF) provides an inclusive platform for democratic dialogue and collective
             actions, empowering marginalized communities to develop innovative solutions for climate justice,
             Agroecology, food sovereignty, governance, human rights, and  gender equity, through holistic and

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import img from '../assets/carbon.jpg'
 import Footer from '../components/Footer/Footer'
 import HeroAbout from '../components/HeroAbout/HeroAbout'

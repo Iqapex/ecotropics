@@ -1,11 +1,12 @@
 // src/components/News.js
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import UpcomingEvents from "./UpcomingEvents";
 import "./News.css"; // Keep your existing styles
 import img from "../../assets/hero2.jpg";
-import PastEvents from "./PastEvents";
+//import PastEvents from "./PastEvents";
 import ForumLanguages from "./ForumLanguages";
 import HeroAbout from "../HeroAbout/HeroAbout";
+import Project from "../Projects/Project";
 
 function News() {
   // Scroll to the element with the id when the component is loaded
@@ -23,7 +24,8 @@ function News() {
     <div className="news-container" id="news-container">
       <HeroAbout img={img} text="Get updated with US" />
       <UpcomingEvents />
-      <PastEvents />
+      {/* <PastEvents /> */}
+      <Project />
       <ForumLanguages />
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+
 import Hero from "../Hero/Hero";
 import Tag from "../Tag/Tag";
 import Uniqueness from "./Uniqueness";

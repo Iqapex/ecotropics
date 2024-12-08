@@ -2,7 +2,7 @@
 
 .app-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #bbd8d8, #556b77);
+  background: linear-gradient(135deg, #6f9292, #405967);
 }
 
 .header {
@@ -95,6 +95,10 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  height: 32rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .project-card:hover {
