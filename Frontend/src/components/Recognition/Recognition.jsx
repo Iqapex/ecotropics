@@ -1,10 +1,10 @@
-import React from 'react';
+
 import SwiperCore from 'swiper/core'; // Import Swiper core
 import 'swiper/css'; // Import Swiper core styles
  // Import Autoplay module styles
 import { Autoplay } from 'swiper/modules'; // Import Autoplay module
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img1 from '../../assets/img1.png';
+import img1 from '../../assets/img1.jpg';
 import img2 from '../../assets/img2.png';
 import img3 from '../../assets/img3.png';
 import img4 from '../../assets/img4.png';
