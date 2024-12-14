@@ -9,6 +9,7 @@ import News from "./components/News/News.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Thematic from "./Pages/Thematic.jsx";
 import Project from "./components/Projects/Project.jsx";
+import Admin from "./Admin/Admin.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/projects",
         element: <Project />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
       },
       {
         path: "*",

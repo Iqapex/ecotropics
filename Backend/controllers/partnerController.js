@@ -15,6 +15,16 @@ const partnerForm = async (req, res) => {
         }
     };
 
-module.exports = partnerForm;
+    const getAllPartner = async (req, res) => { 
+        try { 
+            const partner = await Partner.find({}); 
+            res.status(200).json(partner); 
+        } catch (error) { 
+            console.error("Error retrieving partner data:", error); 
+            res.status(500).json({ error: "Internal Server Error" }); 
+        } 
+    };
+    
+module.exports = {partnerForm, getAllPartner};
 
 

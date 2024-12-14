@@ -29,4 +29,14 @@ const joinUsForm = async (req, res) => {
     }
 };
 
-module.exports = joinUsForm;
+const getJoinUsEmails = async (req, res) => {
+    try {
+        const emails = await JoinUs.find(); // Retrieve all emails
+        res.status(200).json(emails); // Send emails as JSON response
+    } catch (error) {
+        console.error("Error fetching join us emails:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
+module.exports = { joinUsForm, getJoinUsEmails };

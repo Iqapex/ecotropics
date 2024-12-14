@@ -16,4 +16,14 @@ const contactForm = async (req, res) => {
     }
 };
 
-module.exports = contactForm;
+const getAllContacts = async (req, res) => { 
+    try { 
+        const contacts = await Contact.find({}); 
+        res.status(200).json(contacts); 
+    } catch (error) { 
+        console.error("Error retrieving contact data:", error); 
+        res.status(500).json({ error: "Internal Server Error" }); 
+    } 
+};
+
+module.exports = {contactForm, getAllContacts};

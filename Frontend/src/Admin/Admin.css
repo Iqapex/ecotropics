@@ -1,0 +1,128 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Admin Page Layout */
+.admin-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  margin-top: 6rem;
+  width: 250px;
+  background-color: #616161;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.sidebar-header {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  margin: 5px 0;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-link:hover {
+  background-color: #444;
+}
+
+.sidebar-link.active {
+  background-color: #555;
+  font-weight: bold;
+}
+
+/* Main Content Styles */
+.admin-main {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  overflow-y: auto;
+  margin-top: 6rem;
+}
+
+.admin-main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Data Container Styles */
+.data-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.data-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.data-card .data-content {
+  margin-bottom: 15px;
+}
+
+.data-item {
+  margin-bottom: 8px;
+}
+
+.data-card strong {
+  font-weight: bold;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #d43f3f;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .data-card {
+    grid-template-columns: 1fr; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .data-card {
+    width: 100%; /* One card per row on very small screens */
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const JoinUs = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -12,7 +12,7 @@ const JoinUs = () => {
     const email = e.target.email.value;
 
     try {
-      const response = await fetch("https://zamsof.onrender.com/api/joinus", {
+      const response = await fetch("http://localhost:4000/api/joinus", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

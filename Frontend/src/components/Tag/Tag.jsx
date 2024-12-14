@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './Tag.css';
 
 function Tag() {
@@ -29,7 +29,6 @@ function Tag() {
     
     // Remove event listener on component unmount
     return () => {
-      console.log("hi");
       window.removeEventListener('scroll', listener);
     };
   }, []); // Run effect only once on component mount

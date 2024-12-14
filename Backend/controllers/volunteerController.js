@@ -25,4 +25,14 @@ const volunteerForm = async (req, res) => {
     }
 };
 
-module.exports = volunteerForm;
+const getAllVolunteer = async (req, res) => { 
+    try { 
+        const volunteer = await Volunteer.find({}); 
+        res.status(200).json(volunteer); 
+    } catch (error) { 
+        console.error("Error retrieving volunteer data:", error); 
+        res.status(500).json({ error: "Internal Server Error" }); 
+    } 
+};
+
+module.exports = {volunteerForm, getAllVolunteer};
