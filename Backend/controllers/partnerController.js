@@ -24,7 +24,23 @@ const partnerForm = async (req, res) => {
             res.status(500).json({ error: "Internal Server Error" }); 
         } 
     };
+
+    const deletePartnerForm = async (req, res) => {
+        try {
+            const { id } = req.params;
     
-module.exports = {partnerForm, getAllPartner};
+            const deletePartner = await Partner.findByIdAndDelete(id);
+            if (!deletePartner) {
+                return res.status(404).json({ error: "Partner not found" });
+            }
+    
+            res.status(200).json({ message: "Partner deleted" });
+        } catch (error) {
+            console.error("Error deleting Partner:", error);
+            res.status(500).json({ error: "Internal Server Error" });
+        }
+    };
+    
+module.exports = {partnerForm, getAllPartner, deletePartnerForm};
 
 

@@ -35,4 +35,20 @@ const getAllVolunteer = async (req, res) => {
     } 
 };
 
-module.exports = {volunteerForm, getAllVolunteer};
+const deleteVolunteerForm = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const deleteVolunteer = await Volunteer.findByIdAndDelete(id);
+        if (!deleteVolunteer) {
+            return res.status(404).json({ error: "Volunteer not found" });
+        }
+
+        res.status(200).json({ message: "Volunteer deleted" });
+    } catch (error) {
+        console.error("Error deleting Volunteer:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
+module.exports = {volunteerForm, getAllVolunteer, deleteVolunteerForm};

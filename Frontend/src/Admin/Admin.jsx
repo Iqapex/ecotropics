@@ -35,10 +35,24 @@ const Admin = () => {
     fetchData();
   }, [endpoint]);
 
-  const handleDelete = (id) => {
-    const updatedData = data.filter((item) => item.id !== id);
-    setData(updatedData);
-  };
+  const handleDelete = async (id) => {
+    try {
+        const response = await fetch(`http://localhost:4000/api/${endpoint}/${id}`, {
+            method: "DELETE",
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to delete data");
+        }
+
+        const updatedData = data.filter((item) => item._id !== id);
+        setData(updatedData);
+    } catch (error) {
+        console.error("Error deleting data:", error);
+        alert("Failed to delete the item. Please try again.");
+    }
+};
+
 
   const menuItems = [
     { name: "Donation", path: "donation" },
@@ -89,7 +103,7 @@ const Admin = () => {
                 </div>
                 <button
                   className="delete-btn"
-                  onClick={() => handleDelete(item.id)}
+                  onClick={() => handleDelete(item._id)}
                 >
                   X
                 </button>

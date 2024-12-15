@@ -6,6 +6,7 @@ const VolunteerForm = ({ closePopup }) => {
     name: "",
     email: "",
     phone: "",
+    address:"",
     availability: "",
     skills: "",
     message: "",
@@ -41,6 +42,7 @@ const VolunteerForm = ({ closePopup }) => {
           name: "",
           email: "",
           phone: "",
+          address:"",
           availability: "",
           skills: "",
           message: "",
@@ -101,6 +103,17 @@ const VolunteerForm = ({ closePopup }) => {
           />
         </div>
         <div className="form-group">
+          <label>Address</label>
+          <input
+            type="text"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            placeholder="Enter your address number"
+            required
+          />
+        </div>
+        <div className="form-group">
           <label>Availability</label>
           <input
             type="text"
@@ -121,16 +134,17 @@ const VolunteerForm = ({ closePopup }) => {
             required
           />
         </div>
-        <div className="form-group">
+      </div>
+      <div className="form-group">
           <label>Message</label>
           <textarea
             name="message"
             value={formData.message}
             onChange={handleChange}
             placeholder="Additional message"
+            rows="4"
           />
         </div>
-      </div>
       <button type="submit" className="submit-btn">
         Submit
       </button>

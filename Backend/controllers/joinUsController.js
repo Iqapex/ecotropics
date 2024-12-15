@@ -39,4 +39,26 @@ const getJoinUsEmails = async (req, res) => {
     }
 };
 
-module.exports = { joinUsForm, getJoinUsEmails };
+const deleteJoinUsEmail = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        if (!id) {
+            return res.status(400).json({ error: "ID is required" });
+        }
+
+        const deletedEmail = await JoinUs.findByIdAndDelete(id);
+
+        if (!deletedEmail) {
+            return res.status(404).json({ error: "Email not found" });
+        }
+
+        res.status(200).json({ message: "Email deleted successfully!" });
+    } catch (error) {
+        console.error("Error deleting email:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};
+
+
+module.exports = { joinUsForm, getJoinUsEmails, deleteJoinUsEmail };
