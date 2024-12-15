@@ -10,6 +10,7 @@ const volunteerRoute = require("./routes/volunteerRoutes");
 const partnerRoute = require("./routes/partnerRoutes");
 const joinUsRoute = require("./routes/joinUsRoutes");
 const stripeRoute = require("./stripe");
+const bcrypt = require("bcrypt");
 
 dotenv.config();
 
@@ -17,8 +18,7 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 const corsOptions = {
-    // origin: "https://zamsof.org",
-    origin: "http://localhost:5173",
+    origin: "https://zamsof.org",
     methods: "GET, POST, PUT, DELETE",
     optionsSuccessStatus: 200, // Some legacy browsers (IE11, various versions of Android) choke on 204
     credentials: true,
@@ -35,6 +35,17 @@ app.use("/api/volunteer", volunteerRoute);
 app.use("/api/partner", partnerRoute);
 app.use("/api/joinus", joinUsRoute);
 app.use("/api/stripe", stripeRoute);
+
+const hashedPassword = bcrypt.hashSync("X4@pL#9mWz!kQ8vY", 10);
+ app.post("/api/verify-password", (req, res) => {
+   const { password } = req.body;
+
+   if (bcrypt.compareSync(password, hashedPassword)) {
+     res.json({ success: true });
+   } else {
+     res.json({ success: false });
+   }
+ });
 
 // Root Route
 app.get("/", (req, res) => {

@@ -2,6 +2,9 @@ import { useState, useEffect } from "react";
 import "./Admin.css";
 
 const Admin = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -15,44 +18,73 @@ const Admin = () => {
       .join(" ");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setError("");
-        const response = await fetch(`http://localhost:4000/api/${endpoint}`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch data");
+    if (isAuthenticated) {
+      const fetchData = async () => {
+        try {
+          setError("");
+          const response = await fetch(`https://zamsof.onrender.com/api/${endpoint}`);
+          if (!response.ok) {
+            throw new Error("Failed to fetch data");
+          }
+          const result = await response.json();
+          setData(result);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          setError("Unable to load data. Please try again later.");
+        } finally {
+          setLoading(false);
         }
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setError("Unable to load data. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
+      };
 
-    fetchData();
-  }, [endpoint]);
+      fetchData();
+    }
+  }, [endpoint, isAuthenticated]);
+
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://zamsof.onrender.com/api/verify-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ password }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsAuthenticated(true);
+        setPasswordError("");
+      } else {
+        setPasswordError("Incorrect password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error verifying password:", error);
+      setPasswordError("Something went wrong. Please try again later.");
+    }
+  };
 
   const handleDelete = async (id) => {
     try {
-        const response = await fetch(`http://localhost:4000/api/${endpoint}/${id}`, {
-            method: "DELETE",
-        });
-
-        if (!response.ok) {
-            throw new Error("Failed to delete data");
+      const response = await fetch(
+        `http://localhost:4000/api/${endpoint}/${id}`,
+        {
+          method: "DELETE",
         }
+      );
 
-        const updatedData = data.filter((item) => item._id !== id);
-        setData(updatedData);
+      if (!response.ok) {
+        throw new Error("Failed to delete data");
+      }
+
+      const updatedData = data.filter((item) => item._id !== id);
+      setData(updatedData);
     } catch (error) {
-        console.error("Error deleting data:", error);
-        alert("Failed to delete the item. Please try again.");
+      console.error("Error deleting data:", error);
+      alert("Failed to delete the item. Please try again.");
     }
-};
-
+  };
 
   const menuItems = [
     { name: "Donation", path: "donation" },
@@ -64,58 +96,82 @@ const Admin = () => {
 
   return (
     <div className="admin-container">
-      <aside className="sidebar">
-        <h2 className="sidebar-header">Admin Panel</h2>
-        <nav>
-          {menuItems.map((item, index) => (
-            <button
-              key={index}
-              className={`sidebar-link ${
-                activeLink === item.path ? "active" : ""
-              }`}
-              onClick={() => {
-                setEndpoint(item.path);
-                setActiveLink(item.path);
-                setLoading(true);
-              }}
-            >
-              {item.name}
+      {!isAuthenticated ? (
+        <div className="password-container">
+          <form onSubmit={handlePasswordSubmit} className="password-form">
+            <h2>Admin Login</h2>
+            <input
+              type="password"
+              placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="password-input"
+            />
+            <button type="submit" className="password-submit-btn">
+              Submit
             </button>
-          ))}
-        </nav>
-      </aside>
-
-      <main className="admin-main">
-        <h2>{capitalizeWords(endpoint)} Data</h2>
-        {error && <p className="error-message">{error}</p>}
-        {loading ? (
-          <p>Loading...</p>
-        ) : data.length > 0 ? (
-          <div className="data-container">
-            {data.map((item) => (
-              <div key={item.id} className="data-card">
-                <div className="data-content">
-                  {Object.keys(item).map((key) => (
-                    <div key={key} className="data-item">
-                      <strong>{capitalizeWords(key)}:</strong> {item[key]}
-                    </div>
-                  ))}
-                </div>
+            {passwordError && <p className="error-message">{passwordError}</p>}
+          </form>
+        </div>
+      ) : (
+        <>
+          <aside className="sidebar">
+            <h2 className="sidebar-header">Admin Panel</h2>
+            <nav>
+              {menuItems.map((item, index) => (
                 <button
-                  className="delete-btn"
-                  onClick={() => handleDelete(item._id)}
+                  key={index}
+                  className={`sidebar-link ${
+                    activeLink === item.path ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    setEndpoint(item.path);
+                    setActiveLink(item.path);
+                    setLoading(true);
+                  }}
                 >
-                  X
+                  {item.name}
                 </button>
+              ))}
+            </nav>
+          </aside>
+
+          <main className="admin-main">
+            <h2>{capitalizeWords(endpoint)} Data</h2>
+            {error && <p className="error-message">{error}</p>}
+            {loading ? (
+              <p>Loading...</p>
+            ) : data.length > 0 ? (
+              <div className="data-container">
+                {data.map((item) => (
+                  <div key={item._id} className="data-card">
+                    <div className="data-content">
+                      {Object.keys(item)
+                        .filter((key) => key !== "_id" && key !== "__v") // Exclude `_id` and `__v`
+                        .map((key) => (
+                          <div key={key} className="data-item">
+                            <strong>{capitalizeWords(key)}:</strong> {item[key]}
+                          </div>
+                        ))}
+                    </div>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDelete(item._id)}
+                    >
+                      X
+                    </button>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        ) : (
-          <p>No {capitalizeWords(endpoint)} data available yet.</p>
-        )}
-      </main>
+            ) : (
+              <p>No {capitalizeWords(endpoint)} data available yet.</p>
+            )}
+          </main>
+        </>
+      )}
     </div>
   );
 };
 
 export default Admin;
+

@@ -42,7 +42,7 @@ const ThematicPage = () => {
         <h3>Program Highlights</h3>
         <div className="highlights-timeline">
           {programHighlights.map((highlight, index) => (
-            <Fade bottom delay={200 * index} key={index}>
+            <Fade left delay={200 * index} key={index}>
               <div className="highlight">
                 <h4>{highlight.title}</h4>
                 <p style={{color: '#1d1f1d'}}>{highlight.text}</p>

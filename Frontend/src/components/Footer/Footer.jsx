@@ -1,5 +1,5 @@
-import React from "react";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom"; // Import Link for routing
 import "./Footer.css";
 
@@ -90,7 +90,7 @@ const Footer = () => {
         <p>&copy; 2024 ZAMSOF. All Rights Reserved.</p>
         <div className="social-links">
           <a
-            href="https://www.facebook.com"
+            href="https://web.facebook.com/profile.php?id=100064324136828"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -98,15 +98,15 @@ const Footer = () => {
             <FaFacebook />
           </a>
           <a
-            href="https://www.twitter.com"
+            href="https://x.com/ZAMSOFZM"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
           >
-            <FaTwitter />
+            <FaXTwitter />
           </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/zamsofzm"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"

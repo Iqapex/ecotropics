@@ -10,7 +10,6 @@ import img3 from '../../assets/img3.png';
 import img4 from '../../assets/img4.png';
 import img5 from '../../assets/img5.png';
 import img6 from '../../assets/img6.jpeg';
-import img7 from '../../assets/img7.jpeg';
 import img8 from '../../assets/img8.jpg';
 import './Recognition.css'; // Import the provided CSS file
 
@@ -49,7 +48,7 @@ const Recognition = () => {
           //TODO Add Action in Zambia, PCFS, Eco Fish, and other key partners.
           className="swipeflex"
         >
-          {[img1, img2, img3, img4, img5, img6, img7, img8].map((image) => createSlide(image))}
+          {[img1, img2, img3, img4, img5, img6, img8].map((image) => createSlide(image))}
         </Swiper>
       </div>
     </>

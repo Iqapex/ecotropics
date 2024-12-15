@@ -1,3 +1,78 @@
+/* Admin Page Layout */
+.admin-container {
+  display: flex;
+  height: 100vh; /* Blurred background */
+}
+
+/* Password Container Styles */
+.password-container {
+  align-content: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.password-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.password-submit-btn {
+  background-color: #61adcd;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.password-submit-btn:hover {
+  background-color: #3174bc;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Hide the admin panel when password is not authenticated */
+.admin-container-blur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+/* Admin Panel Styles when authenticated */
+.admin-panel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -73,7 +148,7 @@ a {
 }
 
 .data-card {
-  background-color: #f9f9f9;
+  background-color: #d5e8e5;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;

@@ -27,7 +27,7 @@ const Partner = ({ closePopup }) => {
     setSuccessMessage(""); // Clear any previous success messages
 
     try {
-      const response = await fetch("http://localhost:4000/api/partner", {
+      const response = await fetch("https://zamsof.onrender.com/api/partner", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

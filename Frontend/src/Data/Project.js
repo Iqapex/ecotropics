@@ -1,4 +1,11 @@
 export const projectData = [
+  {
+    title: "SEEEING IS BELIEVING EYE CARE HEALTH",
+    duration: "September 2016 to September 2020",
+    donor: "Standard Chartered Bank and SightSavers in partnership with Ministry of Health",
+    location: "Chinsali, Isoka, Chama, Lundazi, Petauke, Kanchibiya, and Lavumandashi",
+    summary: "The project helped over 4,500 people receive sight-saving cataract surgeries, improving their well-being and that of their families. It created demand for sustainable eye care services in eight districts, focusing on disadvantaged groups like women and disabled persons. The initiative supported routine eye clinics, provided eye equipment, and trained ophthalmic nurses in Chinsali, Isoka, and Chama districts. Additionally, it expanded ZAMSOF membership through partnerships and dispensed 27,856 spectacles and 1,421 glasses to school children.",
+  },
     {
       title: "Capacity Development Initiative to enhance citizen participation in local, national, and international climate policy-making, Phase 2",
       duration: "January 2021 - December 2024",
