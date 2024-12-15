@@ -68,7 +68,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:4000/api/${endpoint}/${id}`,
+        `https://zamsof.onrender.com/api/${endpoint}/${id}`,
         {
           method: "DELETE",
         }
