@@ -5,7 +5,7 @@ const AnnualReport = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const years = [
-    { year: "2024", link: "/2023.pdf" },
+    { year: "2024", link: "/2024.pdf" },
     { year: "2023", link: "/2023.pdf" },
   ];
 
@@ -16,7 +16,6 @@ const AnnualReport = () => {
 
   const openPDF = (link) => {
     console.log("Opening PDF in new tab:", link);
-    // Ensure the link is correct and the PDF can open in a new tab
     window.open(link, "_blank", "noopener,noreferrer");
     setIsOpen(false);
   };
