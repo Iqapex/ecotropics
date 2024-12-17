@@ -5,6 +5,7 @@ import "./News.css"; // Keep your existing styles
 //import PastEvents from "./PastEvents";
 import ForumLanguages from "./ForumLanguages";
 import Project from "../Projects/Project";
+import AnnualReport from "./AnnualReport";
 
 function News() {
   // Scroll to the element with the id when the component is loaded
@@ -20,6 +21,7 @@ function News() {
 
   return (
     <div className="news-container" id="news-container">
+      <AnnualReport />
       <UpcomingEvents />
       {/* <PastEvents /> */}
       <Project />

@@ -1,0 +1,82 @@
+/* Container */
+.annual-report-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    gap: 1rem;
+    background-color: #c9d4ac;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Title */
+  .annual-report-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #b96060;
+  }
+  
+  /* View Button */
+  .view-button {
+    padding: 10px 20px;
+    background-color: #5fc65c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Fixed width for consistency */
+    text-align: center;
+  }
+  
+  .view-button:hover {
+    background-color: #56a64d;
+  }
+  
+  /* Dropdown Actions */
+  .annual-report-actions {
+    position: relative;
+  }
+  
+  /* Dropdown */
+  .dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 200px; /* Match the width of the view button */
+  }
+  
+  /* Dropdown Items */
+  .dropdown-item-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Match parent width */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #357abd;
+  }
+  
