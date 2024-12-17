@@ -7,7 +7,7 @@
     height: 100px;
     padding: 20px;
     gap: 1rem;
-    background-color: #c9d4ac;
+    background-color: #e8cdcd;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     font-family: Arial, sans-serif;
@@ -77,6 +77,18 @@
   }
   
   .dropdown-item:hover {
+    background-color: #90a8dc;
+  }
+  
+  /* Download Button */
+  .download-item {
+    background-color: #4a90e2;
+    color: white;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Ensure it matches other buttons */
+  }
+  
+  .download-item:hover {
     background-color: #357abd;
   }
   
