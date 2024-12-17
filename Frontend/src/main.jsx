@@ -5,11 +5,12 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home.jsx";
 import About from "./Pages/About.jsx";
-import News from "./components/News/News.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Thematic from "./Pages/Thematic.jsx";
 import Project from "./components/Projects/Project.jsx";
 import Admin from "./Admin/Admin.jsx";
+import Newss from "./Pages/News.jsx";
+import Gallery from "./Pages/Gallery.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,15 +27,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/news",
-        element: <News />,
+        element: <Newss />,
       },
       {
         path: "/contact",
         element: <Contact />,
       },
       {
+        path: "/gallery",
+        element: <Gallery />,
+      },
+      {
         path: "/thematic",
-        element: <Thematic />,// Replace with your actual Partner component
+        element: <Thematic />,
       },
       {
         path: "/projects",
