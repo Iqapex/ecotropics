@@ -1,6 +1,5 @@
-
+import { useEffect } from 'react';
 import './Thematic.css';
-import Fade from 'react-reveal/Fade';
 
 // Import content
 import {
@@ -12,14 +11,30 @@ import {
 } from '../../Data/Thematic';
 
 const ThematicPage = () => {
+  useEffect(() => {
+    // Select all elements with the class "fade-in"
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        // Check if the element is in the viewport
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible'); // Add the "visible" class to trigger animation
+          observer.unobserve(entry.target); // Stop observing once the element is visible
+        }
+      });
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is in view
+
+    // Start observing each fade-in element
+    fadeInElements.forEach((element) => observer.observe(element));
+  }, []);
+
   return (
     <div className="thematic-page">
       {/* Intro Section */}
-      <section className="intro">
-        <Fade bottom>
-          <h2>{introContent.heading}</h2>
-          <p>{introContent.description}</p>
-        </Fade>
+      <section className="intro fade-in">
+        <h2>{introContent.heading}</h2>
+        <p>{introContent.description}</p>
       </section>
 
       {/* Thematic Areas Section */}
@@ -27,12 +42,13 @@ const ThematicPage = () => {
         <h3>Thematic Areas List</h3>
         <div className="area-cards">
           {thematicAreas.map((area, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="area-card">
-                <h4>{area.title}</h4>
-                <p style={{color: '#1d1f1d'}}>{area.text}</p>
-              </div>
-            </Fade>
+            <div
+              className={`area-card fade-in fade-in-delay-${index + 1}`}
+              key={index}
+            >
+              <h4>{area.title}</h4>
+              <p style={{ color: '#1d1f1d' }}>{area.text}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -42,12 +58,13 @@ const ThematicPage = () => {
         <h3>Program Highlights</h3>
         <div className="highlights-timeline">
           {programHighlights.map((highlight, index) => (
-            <Fade left delay={200 * index} key={index}>
-              <div className="highlight">
-                <h4>{highlight.title}</h4>
-                <p style={{color: '#1d1f1d'}}>{highlight.text}</p>
-              </div>
-            </Fade>
+            <div
+              className={`highlight fade-in fade-in-delay-${index + 1}`}
+              key={index}
+            >
+              <h4>{highlight.title}</h4>
+              <p style={{ color: '#1d1f1d' }}>{highlight.text}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -57,12 +74,13 @@ const ThematicPage = () => {
         <h3>Format of Social Forum</h3>
         <div className="forum-list">
           {socialForumFormat.map((forum, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="forum-item">
-                <h4>{forum.title}</h4>
-                <p style={{color: '#1d1f1d'}}>{forum.text}</p>
-              </div>
-            </Fade>
+            <div
+              className={`forum-item fade-in fade-in-delay-${index + 1}`}
+              key={index}
+            >
+              <h4>{forum.title}</h4>
+              <p style={{ color: '#1d1f1d' }}>{forum.text}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -72,12 +90,13 @@ const ThematicPage = () => {
         <h3>Mobilization Strategies</h3>
         <div className="strategy-list">
           {mobilizationStrategies.map((strategy, index) => (
-            <Fade bottom delay={200 * index} key={index}>
-              <div className="strategy-item">
-                <h4 >{strategy.title}</h4>
-                <p style={{color: '#1d1f1d'}} >{strategy.text}</p>
-              </div>
-            </Fade>
+            <div
+              className={`strategy-item fade-in fade-in-delay-${index + 1}`}
+              key={index}
+            >
+              <h4>{strategy.title}</h4>
+              <p style={{ color: '#1d1f1d' }}>{strategy.text}</p>
+            </div>
           ))}
         </div>
       </section>

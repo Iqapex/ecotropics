@@ -1,5 +1,3 @@
-
-import Fade from 'react-reveal/Fade';
 import './What.css';
 import { programItems } from '../../Data/Home';
 
@@ -15,50 +13,42 @@ function What() {
   return (
     <div className='whatwedo'>
       <div className="Reg-container">
-        <Fade bottom>
-          <div className="Reg-text">
-            <h2>Our Mission</h2>
-            <h3>
-              At ZAMSOF, we believe in building a planetary society directed towards
-              fruitful relationships among humankind and with the Earth. We strive to create a participatory environment where diverse voices converge to address interconnected social and environmental issues, advocating for equitable policies that enhance resilience, inclusivity, and community empowerment for all.
-            </h3>
-            <h3 style={{ color: '#c50c0cf0' }}>Our Core Mission</h3>
+        <div className="Reg-text">
+          <h2>Our Mission</h2>
+          <h3>
+            At ZAMSOF, we believe in building a planetary society directed towards
+            fruitful relationships among humankind and with the Earth. We strive to create a participatory environment where diverse voices converge to address interconnected social and environmental issues, advocating for equitable policies that enhance resilience, inclusivity, and community empowerment for all.
+          </h3>
+          <h3 style={{ color: '#c50c0cf0' }}>Our Core Mission</h3>
 
-            <p  style={{ color: '#1f2937', fontSize: '1rem' }}>
+          <p  style={{ color: '#1f2937', fontSize: '1rem' }}>
             Zambia Social Forum (ZAMSOF) provides an inclusive platform for democratic dialogue and collective
             actions, empowering marginalized communities to develop innovative solutions for climate justice,
-            Agroecology, food sovereignty, governance, human rights, and  gender equity, through holistic and
-            grassroots-led initiatives. while fostering National, regional and global partnerships for sustainable
+            Agroecology, food sovereignty, governance, human rights, and gender equity, through holistic and
+            grassroots-led initiatives, while fostering National, regional, and global partnerships for a sustainable
             future.
-            </p>
+          </p>
 
-            {/* Mission Items Cards */}
-            <div className="cards-container">
-              {missionItems.map((item, index) => (
-                <Fade bottom delay={index * 200} key={index}>
-                  <div className="card">
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
-                  </div>
-                </Fade>
-              ))}
-            </div>
+          {/* Mission Items Cards */}
+          <div className="cards-container">
+            {missionItems.map((item, index) => (
+              <div className="card" key={index}>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
+              </div>
+            ))}
           </div>
-        </Fade>
+        </div>
       </div>
 
       <div className="Reg-offers">
-        <Fade bottom>
-          <h2>Our Programs</h2>
-        </Fade>
+        <h2>Our Programs</h2>
         <div className="cards-container">
           {programItems.map((item, index) => (
-            <Fade bottom delay={index * 200} key={index}>
-              <div key={index} className="card">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </Fade>
+            <div key={index} className="card">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
           ))}
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react';
-import Fade from 'react-reveal/Fade';
 import { FaCalendarAlt, FaGlobe, FaMapPin, FaUsers } from 'react-icons/fa';
 import './Project.css';
 import { projectData } from '../../Data/Project';
@@ -8,9 +7,7 @@ const ProjectCard = ({ project }) => {
   if (!project) return null; // Handle missing project props safely
   return (
     <div className="project-card">
-      <Fade bottom>
-        <h3 className="project-title">{project.title}</h3>
-      </Fade>
+      <h3 className="project-title">{project.title}</h3>
       <div className="project-meta">
         <div className="meta-item">
           <FaCalendarAlt size={18} />
@@ -59,9 +56,7 @@ const ProjectsGrid = ({ projects }) => {
       <div className="projects-grid">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project, index) => (
-            <Fade bottom delay={index * 200} key={index}>
-              <ProjectCard key={index} project={project} />
-            </Fade>
+            <ProjectCard key={index} project={project} />
           ))
         ) : (
           <p>No projects found</p> // No results message

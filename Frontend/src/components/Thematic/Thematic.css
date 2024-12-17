@@ -203,6 +203,19 @@ h4 {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Add shadow */
 }
 
+/* Add the fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* Start position off the screen */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0); /* End position */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .area-cards, .forum-list, .strategy-list {
