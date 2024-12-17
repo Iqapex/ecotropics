@@ -11,12 +11,14 @@ const Admin = () => {
   const [endpoint, setEndpoint] = useState("donation");
   const [activeLink, setActiveLink] = useState("donation");
 
+  // Capitalize Words Helper
   const capitalizeWords = (str) =>
     str
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
 
+  // Fetch Data
   useEffect(() => {
     if (isAuthenticated) {
       const fetchData = async () => {
@@ -29,18 +31,18 @@ const Admin = () => {
 
           const result = await response.json();
           setData(result);
-        } catch (error) {
-          console.error("Error fetching data:", error);
-          setError("Unable to load data. Please try again later.");
+        } catch (err) {
+          console.error("Error fetching data:", err);
+          // setError("Unable to load data. Please try again later.");
         } finally {
           setLoading(false);
         }
       };
-
       fetchData();
     }
   }, [endpoint, isAuthenticated]);
 
+  // Handle Password Submit
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -57,26 +59,26 @@ const Admin = () => {
       if (result.success) {
         setIsAuthenticated(true);
         setPasswordError("");
-      } else {
-        setPasswordError("Incorrect password. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error verifying password:", error);
+      } else setPasswordError("Incorrect password. Please try again.");
+    } catch (err) {
+      console.error("Error verifying password:", err);
       setPasswordError("Something went wrong. Please try again later.");
     }
   };
 
+  // Handle Delete
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
         `https://zamsof.onrender.com/api/${endpoint}/${id}`,
         { method: "DELETE" }
       );
+
       if (!response.ok) throw new Error("Failed to delete data");
 
       setData(data.filter((item) => item._id !== id));
-    } catch (error) {
-      console.error("Error deleting data:", error);
+    } catch (err) {
+      console.error("Error deleting data:", err);
       alert("Failed to delete the item. Please try again.");
     }
   };
@@ -113,9 +115,9 @@ const Admin = () => {
           <aside className="sidebar">
             <h2 className="sidebar-header">Admin Panel</h2>
             <nav>
-              {menuItems.map((item) => (
+              {menuItems.map((item, index) => (
                 <button
-                  key={item.path}
+                  key={index}
                   className={`sidebar-link ${
                     activeLink === item.path ? "active" : ""
                   }`}
@@ -135,31 +137,44 @@ const Admin = () => {
             <h2>{capitalizeWords(endpoint)} Data</h2>
             {error && <p className="error-message">{error}</p>}
             {loading ? (
-              <p className="loading-message">Loading...</p>
+              <div className="loading-container">
+              <div className="loading-spinner"></div>
+              <p className="loading-text">Loading...</p>
+            </div>
+            
             ) : data.length > 0 ? (
               <div className="data-container">
                 {data.map((item) => (
                   <div key={item._id} className="data-card">
-                    {Object.keys(item)
-                      .filter((key) => key !== "_id" && key !== "__v")
-                      .map((key) => (
-                        <div key={key} className="data-item">
-                          <strong>{capitalizeWords(key)}:</strong> {item[key]}
-                        </div>
-                      ))}
+                    <div className="data-content">
+                      {Object.keys(item)
+                        .filter((key) => key !== "_id" && key !== "__v")
+                        .map((key) => (
+                          <div key={key} className="data-item">
+                            <strong>{capitalizeWords(key)}:</strong> {item[key]}
+                          </div>
+                        ))}
+                    </div>
                     <button
                       className="delete-btn"
                       onClick={() => handleDelete(item._id)}
                     >
-                      Delete
+                      X
                     </button>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="no-data-message">
-                No {capitalizeWords(endpoint)} data available.
-              </p>
+              <div className="no-data-container">
+  <div className="no-data-card">
+    <h3 className="no-data-title">No Data Available</h3>
+    <p className="no-data-message">
+      We could not find any {capitalizeWords(endpoint)} data at the moment.
+    </p>
+    <p className="no-data-hint">Please check back later or add new entries.</p>
+  </div>
+</div>
+
             )}
           </main>
         </>
