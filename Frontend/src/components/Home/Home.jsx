@@ -7,7 +7,7 @@ import Process from "../Processes/Process";
 import Achievements from "../Achievements/Achievements";
 import Recognition from "../Recognition/Recognition";
 import JoinUs from "./JoinUs";
-import Team from "../Team/Team";
+//import Team from "../Team/Team";
 
 function Home() {
 
@@ -21,7 +21,7 @@ function Home() {
       <Achievements />
       <Recognition />
       <JoinUs />
-      <Team />
+      {/* <Team /> */}
     </div>
   );
 }

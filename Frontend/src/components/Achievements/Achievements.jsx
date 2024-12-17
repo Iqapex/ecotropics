@@ -8,9 +8,9 @@ const Achievements = () => {
   );
 
   const achievementsData = [
-    { label: 'Farmers', value: 1000 },
+    { label: 'Smallholder Farmers', value: 2000 },
     { label: 'Acres of Land', value: 5000 },
-    { label: 'Clients', value: 400 },
+    { label: 'Beneficiaries', value: 1400 },
     { label: 'Districts', value: 10 }
   ];
 
