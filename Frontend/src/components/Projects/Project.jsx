@@ -1,10 +1,13 @@
 import { useState, useMemo } from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes
 import { FaCalendarAlt, FaGlobe, FaMapPin, FaUsers } from 'react-icons/fa';
 import './Project.css';
 import { projectData } from '../../Data/Project';
 
+// ProjectCard Component
 const ProjectCard = ({ project }) => {
   if (!project) return null; // Handle missing project props safely
+
   return (
     <div className="project-card">
       <h3 className="project-title">{project.title}</h3>
@@ -27,10 +30,22 @@ const ProjectCard = ({ project }) => {
   );
 };
 
+// PropTypes for ProjectCard
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    duration: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    donor: PropTypes.string.isRequired,
+    summary: PropTypes.string.isRequired,
+  }),
+};
+
+// ProjectsGrid Component
 const ProjectsGrid = ({ projects }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // UseMemo to memoize filtered projects
+  // Memoize filtered projects based on search term
   const filteredProjects = useMemo(() => {
     return projects.filter((project) => {
       const searchLower = searchTerm.toLowerCase();
@@ -66,6 +81,20 @@ const ProjectsGrid = ({ projects }) => {
   );
 };
 
+// PropTypes for ProjectsGrid
+ProjectsGrid.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      duration: PropTypes.string.isRequired,
+      location: PropTypes.string.isRequired,
+      donor: PropTypes.string.isRequired,
+      summary: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+// Main Project Component
 const Project = () => {
   return (
     <div className="app-container">
