@@ -5,7 +5,7 @@ const AnnualReport = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const years = [
-    { year: "2024", link: "/2024.pdf" },
+    { year: "2024", link: "/2023.pdf" },
     { year: "2023", link: "/2023.pdf" },
   ];
 
