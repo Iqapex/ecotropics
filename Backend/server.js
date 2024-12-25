@@ -36,7 +36,11 @@ app.use("/api/partner", partnerRoute);
 app.use("/api/joinus", joinUsRoute);
 app.use("/api/stripe", stripeRoute);
 
-const hashedPassword = bcrypt.hashSync("SetUniquePassward", 10);
+if (!process.env.SET_PASSWORD) {
+  throw new Error("SET_PASSWORD is not defined in the environment variables.");
+}
+const hashedPassword = bcrypt.hashSync(process.env.SET_PASSWORD, 10);
+
  app.post("/api/verify-password", (req, res) => {
    const { password } = req.body;
 
