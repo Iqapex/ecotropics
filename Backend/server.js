@@ -36,7 +36,7 @@ app.use("/api/partner", partnerRoute);
 app.use("/api/joinus", joinUsRoute);
 app.use("/api/stripe", stripeRoute);
 
-const hashedPassword = bcrypt.hashSync("X4@pL#9mWz!kQ8vY", 10);
+const hashedPassword = bcrypt.hashSync("SetUniquePassward", 10);
  app.post("/api/verify-password", (req, res) => {
    const { password } = req.body;
 
