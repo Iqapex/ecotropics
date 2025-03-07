@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
+import { Leaf } from 'lucide-react';
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,14 +76,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <motion.img 
-              src="/logo.svg" 
+            {/* <motion.img 
+              src="/logo.png" 
               alt="Ecotropics" 
-              className="h-8"
+              className="h-16"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-            />
-            <span className="text-xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+            /> */}
+            <Leaf className='text-3xl w-12 h-12 text-green-700' />
+            <span className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
               Ecotropics
             </span>
           </Link>

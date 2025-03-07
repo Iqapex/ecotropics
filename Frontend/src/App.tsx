@@ -41,11 +41,15 @@ import WhatWeDo from './pages/WhatWeDo';
 import GetInvolved from './pages/GetInvolved';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
+          <Navbar />
+
+    <Routes>
         {/* Home Page */}
         <Route 
           path="/" 
@@ -131,6 +135,9 @@ const App = () => {
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <Footer />
+
+      
     </BrowserRouter>
   );
 };

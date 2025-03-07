@@ -159,10 +159,316 @@
 
 
 
+// import React from "react";
+// import { motion } from "framer-motion";
+// import Navbar from "../components/Navbar";
+// import Footer from "../components/Footer";
+
+// const AboutUs = () => {
+//   const teamMembers = [
+//     {
+//       name: "Dr. María González",
+//       role: "Founder & Executive Director",
+//       bio: "Environmental scientist with 20+ years experience in tropical ecosystem management. PhD in Applied Ecology from Universidad Nacional de Colombia.",
+//       img: "/team/maria.jpg"
+//     },
+//     {
+//       name: "James Carter",
+//       role: "Chief Technology Officer",
+//       bio: "Full-stack developer and data science expert specializing in environmental applications. Leads our digital transformation initiatives.",
+//       img: "/team/james.jpg"
+//     },
+//     {
+//       name: "Luisa Fernández",
+//       role: "Field Operations Director",
+//       bio: "Sustainable agriculture specialist managing our on-ground projects in Colombia. USAID Farmer-to-Farmer Award recipient 2021.",
+//       img: "/team/luisa.jpg"
+//     },
+//     {
+//       name: "Raj Patel",
+//       role: "Carbon Markets Expert",
+//       bio: "Climate finance professional with expertise in REDD+ and biocredit certification. Former VERRA methodology developer.",
+//       img: "/team/raj.jpg"
+//     },
+//     {
+//       name: "Amina Diallo",
+//       role: "Community Outreach Lead",
+//       bio: "Social anthropologist specializing in indigenous community engagement. Fluent in Spanish and 3 indigenous languages.",
+//       img: "/team/amina.jpg"
+//     },
+//     {
+//       name: "Carlos Rivera",
+//       role: "Restoration Ecologist",
+//       bio: "Expert in Andean ecosystem restoration. Developed our Polylepis replanting methodology.",
+//       img: "/team/carlos.jpg"
+//     }
+//   ];
+
+//   const timeline = [
+//     {
+//       year: 2008,
+//       title: "Organization Founded",
+//       description: "Established in Washington D.C. by environmental scientists and engineers"
+//     },
+//     {
+//       year: 2012,
+//       title: "Philosophy Chapter Published",
+//       description: "Released our foundational chapter on sustainable development principles",
+//       link: "https://www.intechopen.com/chapters/29849"
+//     },
+//     {
+//       year: 2016,
+//       title: "Ecosystem Infrastructure Program",
+//       description: "Launched conservation program in Antioquia, Colombia"
+//     },
+//     {
+//       year: 2021,
+//       title: "USAID Award",
+//       description: "Received Farmer-to-Farmer Volunteer of the Year recognition"
+//     },
+//     {
+//       year: 2025,
+//       title: "REDD+ Verification",
+//       description: "Dual verification underway for Project 47 with VVB Versa",
+//       link: "https://www.ecoregistry.io/projects/47"
+//     }
+//   ];
+
+//   const locations = [
+//     {
+//       name: "Antioquia, Colombia",
+//       projects: "REDD+ Project 47, Polylepis Restoration"
+//     },
+//     {
+//       name: "Andes Mountain Region",
+//       projects: "Watershed Management, Ecotourism Development"
+//     },
+//     {
+//       name: "Pantropical Initiatives",
+//       projects: "Biochar Programs, Cookstove Distribution"
+//     },
+//     {
+//       name: "Washington D.C., USA",
+//       projects: "Policy Advocacy, International Partnerships"
+//     }
+//   ];
+
+//   return (
+//     <div className="min-h-screen">
+//       <Navbar />
+
+//       {/* Hero Section */}
+//       <motion.section
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         className="bg-green-50 py-20"
+//       >
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+//           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+//             About Ecotropics
+//           </h1>
+//           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+//             Pioneering nature-based solutions since 2008 through science, innovation, and community partnership
+//           </p>
+//         </div>
+//       </motion.section>
+
+//       {/* Our People */}
+//       <section className="py-20 bg-white">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
+//           <div className="grid md:grid-cols-3 gap-8">
+//             {teamMembers.map((member, index) => (
+//               <motion.div
+//                 key={member.name}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 viewport={{ once: true }}
+//                 transition={{ delay: index * 0.2 }}
+//                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+//               >
+//                 <img
+//                   src={member.img}
+//                   alt={member.name}
+//                   className="w-full h-64 object-cover object-top"
+//                 />
+//                 <div className="p-6">
+//                   <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+//                   <p className="text-green-600 mb-2">{member.role}</p>
+//                   <p className="text-gray-600">{member.bio}</p>
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Our History */}
+//       <section className="py-20 bg-gray-50">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+          
+//           <div className="relative">
+//             <div className="hidden md:block absolute left-1/2 w-1 h-full bg-green-200 transform -translate-x-1/2"></div>
+            
+//             {timeline.map((item, index) => (
+//               <motion.div
+//                 key={item.year}
+//                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+//                 whileInView={{ opacity: 1, x: 0 }}
+//                 viewport={{ once: true }}
+//                 className={`relative mb-12 md:w-1/2 ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"}`}
+//               >
+//                 <div className="flex items-center md:absolute md:top-0 md:w-full">
+//                   {index % 2 !== 0 && (
+//                     <div className="hidden md:block flex-grow mr-4 border-t-2 border-green-600"></div>
+//                   )}
+//                   <div className="w-6 h-6 bg-green-600 rounded-full shrink-0"></div>
+//                   {index % 2 === 0 && (
+//                     <div className="hidden md:block flex-grow ml-4 border-t-2 border-green-600"></div>
+//                   )}
+//                 </div>
+//                 <div className="bg-white p-6 rounded-xl shadow-lg mt-4 md:mt-0">
+//                   <div className="flex items-center mb-2">
+//                     <span className="text-green-600 font-bold text-xl mr-2">
+//                       {item.year}
+//                     </span>
+//                     <h3 className="text-xl font-semibold">{item.title}</h3>
+//                   </div>
+//                   <p className="text-gray-600 mb-2">{item.description}</p>
+//                   {item.link && (
+//                     <a
+//                       href={item.link}
+//                       className="text-green-600 hover:text-green-700 inline-flex items-center"
+//                       target="_blank"
+//                       rel="noopener noreferrer"
+//                     >
+//                       Learn More
+//                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+//                       </svg>
+//                     </a>
+//                   )}
+//                 </div>
+//               </motion.div>
+//             ))}
+//           </div>
+
+//           {/* Future Plans */}
+//           <motion.div
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             className="mt-20 bg-green-600 text-white p-8 rounded-xl shadow-2xl"
+//           >
+//             <h3 className="text-2xl font-bold mb-6">Future Vision: 2025-2030</h3>
+//             <div className="grid md:grid-cols-2 gap-6">
+//               <div>
+//                 <h4 className="text-lg font-semibold mb-3">Key Initiatives</h4>
+//                 <ul className="space-y-2">
+//                   <li className="flex items-center">
+//                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+//                     </svg>
+//                     Drone-assisted reforestation programs
+//                   </li>
+//                   <li className="flex items-center">
+//                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+//                     </svg>
+//                     Certified native tree nurseries
+//                   </li>
+//                   <li className="flex items-center">
+//                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+//                     </svg>
+//                     Green schools initiative
+//                   </li>
+//                 </ul>
+//               </div>
+//               <div>
+//                 <h4 className="text-lg font-semibold mb-3">Impact Goals</h4>
+//                 <ul className="space-y-2">
+//                   <li>10M+ tons CO2 sequestered annually</li>
+//                   <li>500K+ hectares under conservation</li>
+//                   <li>100+ community partnerships</li>
+//                 </ul>
+//               </div>
+//             </div>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       {/* Where We Work */}
+//       <section className="py-20 bg-white">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <h2 className="text-3xl font-bold text-center mb-12">Global Presence</h2>
+          
+//           <motion.div
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             className="bg-gray-100 h-96 rounded-xl mb-12 flex items-center justify-center relative"
+//           >
+//             <div className="absolute inset-0 bg-[url('/map-placeholder.svg')] bg-cover opacity-50"></div>
+//             <div className="relative z-10 text-center">
+//               <p className="text-gray-600 mb-4">Interactive map available on</p>
+//               <a
+//                 href="[Google Drive Link]"
+//                 className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
+//                 target="_blank"
+//                 rel="noopener"
+//               >
+//                 View Full Map
+//               </a>
+//             </div>
+//           </motion.div>
+
+//           <div className="grid md:grid-cols-4 gap-6">
+//             {locations.map((location, index) => (
+//               <motion.div
+//                 key={location.name}
+//                 initial={{ opacity: 0, y: 20 }}
+//                 whileInView={{ opacity: 1, y: 0 }}
+//                 transition={{ delay: index * 0.1 }}
+//                 className="p-6 bg-green-50 rounded-xl border border-green-100"
+//               >
+//                 <h3 className="text-lg font-semibold mb-2 flex items-center">
+//                   <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+//                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+//                   </svg>
+//                   {location.name}
+//                 </h3>
+//                 <p className="text-gray-600 text-sm">{location.projects}</p>
+//               </motion.div>
+//             ))}
+//           </div>
+
+//           <motion.div
+//             initial={{ opacity: 0 }}
+//             whileInView={{ opacity: 1 }}
+//             className="mt-12 text-center"
+//           >
+//             <a
+//               href="/what-we-do"
+//               className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+//             >
+//               Explore Our Global Projects
+//             </a>
+//           </motion.div>
+//         </div>
+//       </section>
+
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default AboutUs;
+
+
 import React from "react";
 import { motion } from "framer-motion";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { MapPin, ExternalLink, CheckCircle2, Globe, ArrowRight } from "lucide-react";
+
 
 const AboutUs = () => {
   const teamMembers = [
@@ -170,37 +476,37 @@ const AboutUs = () => {
       name: "Dr. María González",
       role: "Founder & Executive Director",
       bio: "Environmental scientist with 20+ years experience in tropical ecosystem management. PhD in Applied Ecology from Universidad Nacional de Colombia.",
-      img: "/team/maria.jpg"
+      img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       name: "James Carter",
       role: "Chief Technology Officer",
       bio: "Full-stack developer and data science expert specializing in environmental applications. Leads our digital transformation initiatives.",
-      img: "/team/james.jpg"
+      img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       name: "Luisa Fernández",
       role: "Field Operations Director",
       bio: "Sustainable agriculture specialist managing our on-ground projects in Colombia. USAID Farmer-to-Farmer Award recipient 2021.",
-      img: "/team/luisa.jpg"
+      img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       name: "Raj Patel",
       role: "Carbon Markets Expert",
       bio: "Climate finance professional with expertise in REDD+ and biocredit certification. Former VERRA methodology developer.",
-      img: "/team/raj.jpg"
+      img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       name: "Amina Diallo",
       role: "Community Outreach Lead",
       bio: "Social anthropologist specializing in indigenous community engagement. Fluent in Spanish and 3 indigenous languages.",
-      img: "/team/amina.jpg"
+      img: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       name: "Carlos Rivera",
       role: "Restoration Ecologist",
       bio: "Expert in Andean ecosystem restoration. Developed our Polylepis replanting methodology.",
-      img: "/team/carlos.jpg"
+      img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -254,62 +560,90 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* Hero Section */}
       <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="bg-green-50 py-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative py-32 overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1536147116438-62679a5e01f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"
+          >
             About Ecotropics
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="text-xl text-gray-600 max-w-3xl mx-auto"
+          >
             Pioneering nature-based solutions since 2008 through science, innovation, and community partnership
-          </p>
+          </motion.p>
         </div>
       </motion.section>
 
       {/* Our People */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center mb-16"
+          >
+            Meet Our Team
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className="w-full h-64 object-cover object-top"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                  <p className="text-green-600 mb-2">{member.role}</p>
-                  <p className="text-gray-600">{member.bio}</p>
+                <div className="relative mb-6">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-64 object-cover object-center rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl" />
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-xl font-semibold">{member.name}</h3>
+                    <p className="text-green-300">{member.role}</p>
+                  </div>
                 </div>
+                <p className="text-gray-600">{member.bio}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our History */}
-      <section className="py-20 bg-gray-50">
+      {/* Our Journey */}
+      <section className="py-20 bg-gradient-to-b from-white to-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
-          
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center mb-16"
+          >
+            Our Journey
+          </motion.h2>
+
           <div className="relative">
-            <div className="hidden md:block absolute left-1/2 w-1 h-full bg-green-200 transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 w-0.5 h-full bg-gradient-to-b from-green-600 to-emerald-600 transform -translate-x-1/2" />
             
             {timeline.map((item, index) => (
               <motion.div
@@ -317,127 +651,115 @@ const AboutUs = () => {
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className={`relative mb-12 md:w-1/2 ${index % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"}`}
+                className={`relative mb-12 md:w-1/2 ${
+                  index % 2 === 0 ? "md:pr-12 ml-auto" : "md:pl-12"
+                }`}
               >
-                <div className="flex items-center md:absolute md:top-0 md:w-full">
-                  {index % 2 !== 0 && (
-                    <div className="hidden md:block flex-grow mr-4 border-t-2 border-green-600"></div>
-                  )}
-                  <div className="w-6 h-6 bg-green-600 rounded-full shrink-0"></div>
-                  {index % 2 === 0 && (
-                    <div className="hidden md:block flex-grow ml-4 border-t-2 border-green-600"></div>
-                  )}
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-lg mt-4 md:mt-0">
-                  <div className="flex items-center mb-2">
-                    <span className="text-green-600 font-bold text-xl mr-2">
-                      {item.year}
-                    </span>
-                    <h3 className="text-xl font-semibold">{item.title}</h3>
-                  </div>
-                  <p className="text-gray-600 mb-2">{item.description}</p>
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                  <div className="absolute top-8 -left-3 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full" />
+                  <span className="inline-block px-4 py-2 rounded-full bg-green-100 text-green-800 font-semibold mb-4">
+                    {item.year}
+                  </span>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <p className="text-gray-600 mb-4">{item.description}</p>
                   {item.link && (
                     <a
                       href={item.link}
-                      className="text-green-600 hover:text-green-700 inline-flex items-center"
+                      className="inline-flex items-center text-green-600 hover:text-green-700 transition-colors"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                      Learn More <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
                   )}
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Future Plans */}
+      {/* Future Vision */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="mt-20 bg-green-600 text-white p-8 rounded-xl shadow-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-green-600 to-emerald-700 text-white p-12 rounded-3xl shadow-xl"
           >
-            <h3 className="text-2xl font-bold mb-6">Future Vision: 2025-2030</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <h2 className="text-3xl font-bold mb-8">Future Vision: 2025-2030</h2>
+            <div className="grid md:grid-cols-2 gap-12">
               <div>
-                <h4 className="text-lg font-semibold mb-3">Key Initiatives</h4>
-                <ul className="space-y-2">
+                <h3 className="text-xl font-semibold mb-6">Key Initiatives</h3>
+                <ul className="space-y-4">
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckCircle2 className="w-5 h-5 mr-3" />
                     Drone-assisted reforestation programs
                   </li>
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckCircle2 className="w-5 h-5 mr-3" />
                     Certified native tree nurseries
                   </li>
                   <li className="flex items-center">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckCircle2 className="w-5 h-5 mr-3" />
                     Green schools initiative
                   </li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold mb-3">Impact Goals</h4>
-                <ul className="space-y-2">
-                  <li>10M+ tons CO2 sequestered annually</li>
-                  <li>500K+ hectares under conservation</li>
-                  <li>100+ community partnerships</li>
-                </ul>
+                <h3 className="text-xl font-semibold mb-6">Impact Goals</h3>
+                <div className="space-y-6">
+                  <div className="bg-white/10 p-4 rounded-xl">
+                    <p className="text-2xl font-bold">10M+</p>
+                    <p>tons CO2 sequestered annually</p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-xl">
+                    <p className="text-2xl font-bold">500K+</p>
+                    <p>hectares under conservation</p>
+                  </div>
+                  <div className="bg-white/10 p-4 rounded-xl">
+                    <p className="text-2xl font-bold">100+</p>
+                    <p>community partnerships</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Where We Work */}
-      <section className="py-20 bg-white">
+      {/* Global Presence */}
+      <section className="py-20 bg-gradient-to-b from-green-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12">Global Presence</h2>
-          
-          <motion.div
+          <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="bg-gray-100 h-96 rounded-xl mb-12 flex items-center justify-center relative"
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center mb-16"
           >
-            <div className="absolute inset-0 bg-[url('/map-placeholder.svg')] bg-cover opacity-50"></div>
-            <div className="relative z-10 text-center">
-              <p className="text-gray-600 mb-4">Interactive map available on</p>
-              <a
-                href="[Google Drive Link]"
-                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700"
-                target="_blank"
-                rel="noopener"
-              >
-                View Full Map
-              </a>
-            </div>
-          </motion.div>
+            Global Presence
+          </motion.h2>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {locations.map((location, index) => (
               <motion.div
                 key={location.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-green-50 rounded-xl border border-green-100"
+                className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <h3 className="text-lg font-semibold mb-2 flex items-center">
-                  <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  </svg>
-                  {location.name}
-                </h3>
-                <p className="text-gray-600 text-sm">{location.projects}</p>
+                <div className="flex items-start gap-4">
+                  <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-3 rounded-xl text-white">
+                    <MapPin className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold mb-2">{location.name}</h3>
+                    <p className="text-gray-600">{location.projects}</p>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -445,19 +767,20 @@ const AboutUs = () => {
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="mt-12 text-center"
+            viewport={{ once: true }}
+            className="mt-16 text-center"
           >
             <a
-              href="/what-we-do"
-              className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-green-700 transition-colors"
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-4 rounded-xl hover:from-green-700 hover:to-emerald-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
-              Explore Our Global Projects
+              <Globe className="w-5 h-5" />
+              <span>Explore Our Global Projects</span>
+              <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };
